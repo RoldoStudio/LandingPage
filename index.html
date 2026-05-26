@@ -163,8 +163,8 @@
 <div class="text-headline-lg font-headline-lg font-black text-primary dark:text-primary-fixed-dim">RoldoStudio</div>
 <div class="hidden md:flex gap-8 items-center">
 <a class="text-primary font-bold border-b-2 border-primary pb-1 hover:bg-surface-container-high transition-transform hover:scale-95" data-i18n="nav.games" href="#">Games</a>
-<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:bg-surface-container-high transition-transform hover:scale-95" data-i18n="nav.about" href="about_us.html">About</a>
-<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:bg-surface-container-high transition-transform hover:scale-95" data-i18n="nav.contact" href="contact.html">Contact</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:bg-surface-container-high transition-transform hover:scale-95" data-i18n="nav.about" href="about_us/">About</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:bg-surface-container-high transition-transform hover:scale-95" data-i18n="nav.contact" href="contact/">Contact</a>
 </div>
 <div class="hidden md:flex items-center gap-3">
 <div class="relative flex items-center gap-1 bg-surface-container-lowest border-2 border-primary rounded-full px-2 py-1 shadow-[3px_3px_0px_0px_rgba(66,54,43,1)]">
@@ -187,8 +187,8 @@
 <div class="md:hidden hidden w-full px-margin-mobile pb-4 max-w-container-max mx-auto" id="mobile-nav">
 <div class="bg-surface-container-lowest border-2 border-primary rounded-2xl shadow-[4px_4px_0px_0px_rgba(66,54,43,1)] p-4 flex flex-col gap-4">
 <a class="text-primary font-bold border-b-2 border-primary pb-1 w-fit" data-i18n="nav.games" href="#">Games</a>
-<a class="text-on-surface-variant font-medium w-fit" data-i18n="nav.about" href="about_us.html">About</a>
-<a class="text-on-surface-variant font-medium w-fit" data-i18n="nav.contact" href="contact.html">Contact</a>
+<a class="text-on-surface-variant font-medium w-fit" data-i18n="nav.about" href="about_us/">About</a>
+<a class="text-on-surface-variant font-medium w-fit" data-i18n="nav.contact" href="contact/">Contact</a>
 <div class="flex items-center gap-2 pt-1">
 <div class="relative flex items-center gap-1 bg-surface border-2 border-primary rounded-full px-2 py-1 shadow-[3px_3px_0px_0px_rgba(66,54,43,1)]">
 <span class="material-symbols-outlined text-primary text-[18px]">language</span>
@@ -249,10 +249,16 @@
 <div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent flex flex-col justify-end items-center pb-12">
 <!-- Logo superimposed -->
 <img alt="" class="w-2/3 md:w-1/2 max-w-[400px] drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)] mb-8 transform -rotate-2 hover:rotate-2 transition-transform duration-300" src="images/img_dcf39670772df9cb.png">
-<button class="kawaii-button bg-tertiary-fixed-dim text-primary font-headline-lg-mobile md:font-headline-lg px-10 py-4 rounded-full border-[4px] border-primary shadow-[6px_6px_0px_0px_rgba(66,54,43,1)] flex items-center gap-3">
-<span class="material-symbols-outlined" style="font-size: 32px;">play_arrow</span>
-<span data-i18n="index.hero.cta">Play Now!</span>
-                        </button>
+<div class="flex flex-col sm:flex-row gap-4 items-center">
+<button class="kawaii-button bg-tertiary-fixed-dim text-primary font-headline-lg-mobile md:font-headline-lg px-8 py-4 rounded-full border-[4px] border-primary shadow-[6px_6px_0px_0px_rgba(66,54,43,1)] flex items-center justify-center gap-3 w-full sm:w-[220px]">
+<span class="material-symbols-outlined" style="font-size: 32px;">adb</span>
+<span data-i18n="index.hero.android">Android</span>
+</button>
+<button class="kawaii-button bg-tertiary-fixed-dim text-primary font-headline-lg-mobile md:font-headline-lg px-8 py-4 rounded-full border-[4px] border-primary shadow-[6px_6px_0px_0px_rgba(66,54,43,1)] flex items-center justify-center gap-3 w-full sm:w-[220px]">
+<span class="material-symbols-outlined" style="font-size: 32px;">phone_iphone</span>
+<span data-i18n="index.hero.ios">iOS</span>
+</button>
+</div>
 </div>
 </div>
 </div>
@@ -342,7 +348,7 @@
 <a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" data-i18n="footer.terms" href="#">Terms of Service</a>
 <a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" data-i18n="footer.support" href="#">Support</a>
 </div>
-<p class="font-body-md text-body-md text-on-secondary-container dark:text-on-primary-fixed text-center max-w-md" data-i18n="footer.copyright">© 2024 RoldoStudio. All rights reserved. Purr-fectly crafted for cozy gamers.</p>
+<p class="font-body-md text-body-md text-on-secondary-container dark:text-on-primary-fixed text-center max-w-md" data-i18n="footer.copyright">© 2026 RoldoStudio. All rights reserved. Purr-fectly crafted for cozy gamers.</p>
 </footer>
 
 
@@ -362,7 +368,7 @@
                     'footer.privacy': 'Privacy Policy',
                     'footer.terms': 'Terms of Service',
                     'footer.support': 'Support',
-                    'footer.copyright': '© 2024 RoldoStudio. All rights reserved. Purr-fectly crafted for cozy gamers.',
+                    'footer.copyright': '© 2026 RoldoStudio. All rights reserved. Purr-fectly crafted for cozy gamers.',
                     'index.meta.title': 'PurringBlocks Studio',
                     'index.about.heading': 'About RoldoStudio',
                     'index.about.desc': "RoldoStudio is the independent creative force behind PurringBlocks. We're a small, passionate team dedicated to making cozy, high-quality mobile games.",
@@ -372,7 +378,8 @@
                     'index.about.card2.desc': 'Handcrafted care and attention in every pixel we create.',
                     'index.about.card3.title': 'Everyday Magic',
                     'index.about.card3.desc': 'We bring peace, joy, and a touch of magic to your everyday life.',
-                    'index.hero.cta': 'Play Now!',
+                    'index.hero.android': 'Android',
+                    'index.hero.ios': 'iOS',
                     'index.banner.heading': 'Perfectly Crafted Games',
                     'index.banner.desc': 'At Roldo Studios, we pour our love for video games and cozy design into every pixel. We believe mobile games should feel like a warm hug, a cup of tea, and a gentle purr in your pocket.',
                     'index.featured.heading': 'Our Featured Game',
@@ -392,7 +399,7 @@
                     'footer.privacy': 'Política de privacidad',
                     'footer.terms': 'Términos del servicio',
                     'footer.support': 'Soporte',
-                    'footer.copyright': '© 2024 RoldoStudio. Todos los derechos reservados. Hecho con cariño para gamers cozy.',
+                    'footer.copyright': '© 2026 RoldoStudio. Todos los derechos reservados. Hecho con cariño para gamers cozy.',
                     'index.meta.title': 'PurringBlocks Studio',
                     'index.about.heading': 'Acerca de RoldoStudio',
                     'index.about.desc': 'RoldoStudio es la fuerza creativa e independiente detrás de PurringBlocks. Somos un pequeño equipo apasionado dedicado a crear juegos móviles acogedores y de alta calidad.',
@@ -402,7 +409,8 @@
                     'index.about.card2.desc': 'Cuidado artesanal y atención al detalle en cada píxel que creamos.',
                     'index.about.card3.title': 'Magia cotidiana',
                     'index.about.card3.desc': 'Brindamos paz, alegría y un toque de magia a tu vida diaria.',
-                    'index.hero.cta': '¡Jugar ahora!',
+                    'index.hero.android': 'Android',
+                    'index.hero.ios': 'iOS',
                     'index.banner.heading': 'Juegos perfectamente creados',
                     'index.banner.desc': 'En Roldo Studios, vertemos nuestro amor por los videojuegos y el diseño acogedor en cada píxel. Creemos que los juegos móviles deben ser un cálido abrazo, una taza de té y un suave ronroneo en tu bolsillo.',
                     'index.featured.heading': 'Nuestro juego destacado',
@@ -422,7 +430,7 @@
                     'footer.privacy': 'Política de privacitat',
                     'footer.terms': 'Termes del servei',
                     'footer.support': 'Suport',
-                    'footer.copyright': '© 2024 RoldoStudio. Tots els drets reservats. Fet amb estima per a gamers cozy.',
+                    'footer.copyright': '© 2026 RoldoStudio. Tots els drets reservats. Fet amb estima per a gamers cozy.',
                     'index.meta.title': 'PurringBlocks Studio',
                     'index.about.heading': 'Sobre RoldoStudio',
                     'index.about.desc': 'RoldoStudio és la força creativa independent darrere de PurringBlocks. Som un petit equip apassionat dedicat a crear jocs mòbils acollidors i d’alta qualitat.',
@@ -432,7 +440,8 @@
                     'index.about.card2.desc': 'Cura artesanal i atenció al detall en cada píxel que creem.',
                     'index.about.card3.title': 'Màgia quotidiana',
                     'index.about.card3.desc': 'Aportem pau, alegria i un toc de màgia al teu dia a dia.',
-                    'index.hero.cta': 'Juga ara!',
+                    'index.hero.android': 'Android',
+                    'index.hero.ios': 'iOS',
                     'index.banner.heading': 'Jocs perfectament creats',
                     'index.banner.desc': 'A Roldo Studios, hi aboquem el nostre amor pels videojocs i el disseny acollidor a cada píxel. Creiem que els jocs mòbils han de ser una abraçada càlida, una tassa de te i un suau ronc a la butxaca.',
                     'index.featured.heading': 'El nostre joc destacat',
