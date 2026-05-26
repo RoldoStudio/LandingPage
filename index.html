@@ -3,6 +3,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Roldo Studios</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="images/REFERENCE.png" rel="icon" type="image/png">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;family=Quicksand:wght@400;500;700&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
@@ -144,6 +145,12 @@
             position: relative;
             padding-top: 16px; /* space for ears */
         }
+        #image-modal .cat-ear-card::before, #image-modal .cat-ear-card::after {
+            z-index: 30;
+        }
+        #image-modal .cat-ear-inner {
+            z-index: 40;
+        }
         .lang-select {
             -webkit-appearance: none;
             -moz-appearance: none;
@@ -160,9 +167,9 @@
 <!-- TopNavBar -->
 <nav class="bg-surface dark:bg-inverse-surface w-full z-50 sticky top-0 border-b-4 border-primary dark:border-on-primary-fixed-variant shadow-[4px_4px_0px_0px_rgba(66,54,43,1)]">
 <div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
-<div class="text-headline-lg font-headline-lg font-black text-primary dark:text-primary-fixed-dim">RoldoStudio</div>
+<a class="text-headline-lg font-headline-lg font-black text-primary dark:text-primary-fixed-dim hover:scale-95 transition-transform" href="./">Roldo Studios</a>
 <div class="hidden md:flex gap-8 items-center">
-<a class="text-primary font-bold border-b-2 border-primary pb-1 hover:bg-surface-container-high transition-transform hover:scale-95" data-i18n="nav.games" href="#">Games</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 hover:bg-surface-container-high transition-transform hover:scale-95" data-i18n="nav.games" href="./">Home</a>
 <a class="text-on-surface-variant dark:text-surface-variant font-medium hover:bg-surface-container-high transition-transform hover:scale-95" data-i18n="nav.about" href="about_us/">About</a>
 <a class="text-on-surface-variant dark:text-surface-variant font-medium hover:bg-surface-container-high transition-transform hover:scale-95" data-i18n="nav.contact" href="contact/">Contact</a>
 </div>
@@ -186,7 +193,7 @@
 </div>
 <div class="md:hidden hidden w-full px-margin-mobile pb-4 max-w-container-max mx-auto" id="mobile-nav">
 <div class="bg-surface-container-lowest border-2 border-primary rounded-2xl shadow-[4px_4px_0px_0px_rgba(66,54,43,1)] p-4 flex flex-col gap-4">
-<a class="text-primary font-bold border-b-2 border-primary pb-1 w-fit" data-i18n="nav.games" href="#">Games</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 w-fit" data-i18n="nav.games" href="./">Home</a>
 <a class="text-on-surface-variant font-medium w-fit" data-i18n="nav.about" href="about_us/">About</a>
 <a class="text-on-surface-variant font-medium w-fit" data-i18n="nav.contact" href="contact/">Contact</a>
 <div class="flex items-center gap-2 pt-1">
@@ -210,11 +217,11 @@
 <section class="w-full px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto text-center"><div class="bg-surface-container-low border-4 border-primary p-8 md:p-12 rounded-[2rem] shadow-[8px_8px_0px_0px_rgba(66,54,43,1)] relative overflow-hidden">
     <div class="relative z-10">
         <div class="flex flex-col items-center mb-10">
-            <h2 class="font-headline-lg text-primary" data-i18n="index.about.heading">About RoldoStudio</h2>
+            <h2 class="font-headline-lg text-primary" data-i18n="index.about.heading">About Roldo Studios</h2>
             <div class="h-1 w-24 bg-primary rounded-full mt-2"></div>
         </div>
         
-        <p class="font-body-lg text-on-surface-variant max-w-3xl mx-auto leading-relaxed mb-12 text-center" data-i18n="index.about.desc">RoldoStudio is the independent creative force behind PurringBlocks. We're a small, passionate team dedicated to making cozy, high-quality mobile games.</p>
+        <p class="font-body-lg text-on-surface-variant max-w-3xl mx-auto leading-relaxed mb-12 text-center" data-i18n="index.about.desc">Roldo Studios is the independent creative force behind PurringBlocks. We're a small, passionate team dedicated to making cozy, high-quality mobile games.</p>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="bg-surface p-6 rounded-2xl border-2 border-primary shadow-[4px_4px_0px_0px_rgba(66,54,43,1)] flex flex-col items-center transition-transform hover:-translate-y-1">
@@ -248,8 +255,8 @@
 <!-- Gradient overlay for better text readability if needed -->
 <div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent flex flex-col justify-end items-center pb-12">
 <!-- Logo superimposed -->
-<img alt="" class="w-2/3 md:w-1/2 max-w-[400px] drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)] mb-8 transform -rotate-2 hover:rotate-2 transition-transform duration-300" src="images/img_dcf39670772df9cb.png">
-<div class="flex flex-col sm:flex-row gap-4 items-center">
+<img alt="" class="hidden md:block w-2/3 md:w-1/2 max-w-[400px] drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)] mb-8 transform -rotate-2 hover:rotate-2 transition-transform duration-300" src="images/img_dcf39670772df9cb.png">
+<div class="hidden md:flex flex-col sm:flex-row gap-4 items-center">
 <button class="kawaii-button bg-tertiary-fixed-dim text-primary font-headline-lg-mobile md:font-headline-lg px-8 py-4 rounded-full border-[4px] border-primary shadow-[6px_6px_0px_0px_rgba(66,54,43,1)] flex items-center justify-center gap-3 w-full sm:w-[220px]">
 <span class="material-symbols-outlined" style="font-size: 32px;">adb</span>
 <span data-i18n="index.hero.android">Android</span>
@@ -261,6 +268,15 @@
 </div>
 </div>
 </div>
+<div class="mt-6 flex flex-col gap-4 items-center w-full md:hidden">
+<button class="kawaii-button bg-tertiary-fixed-dim text-primary font-headline-lg-mobile px-8 py-4 rounded-full border-[4px] border-primary shadow-[6px_6px_0px_0px_rgba(66,54,43,1)] flex items-center justify-center gap-3 w-full max-w-[260px]">
+<span class="material-symbols-outlined" style="font-size: 32px;">adb</span>
+<span data-i18n="index.hero.android">Android</span>
+</button>
+<button class="kawaii-button bg-tertiary-fixed-dim text-primary font-headline-lg-mobile px-8 py-4 rounded-full border-[4px] border-primary shadow-[6px_6px_0px_0px_rgba(66,54,43,1)] flex items-center justify-center gap-3 w-full max-w-[260px]">
+<span class="material-symbols-outlined" style="font-size: 32px;">phone_iphone</span>
+<span data-i18n="index.hero.ios">iOS</span>
+</button>
 </div>
 </div>
 </section>
@@ -293,14 +309,18 @@
 <div class="cat-ear-wrapper h-[400px] transform -rotate-3 hover:rotate-0 transition-transform duration-300">
 <div class="cat-ear-card bg-surface-container-lowest h-full rounded-2xl shadow-[6px_6px_0px_0px_rgba(66,54,43,1)]">
 <div class="cat-ear-inner overflow-hidden flex items-center justify-center p-2">
+<button aria-label="Open image" class="w-full h-full focus:outline-none cursor-zoom-in" data-image-modal-trigger type="button">
 <img alt="" class="w-full h-full object-cover rounded-xl border-2 border-primary" src="images/img_e73bd7dc105871b6.png">
+</button>
 </div>
 </div>
 </div>
 <div class="cat-ear-wrapper h-[400px] mt-12 transform rotate-2 hover:rotate-0 transition-transform duration-300">
 <div class="cat-ear-card bg-surface-container-lowest h-full rounded-2xl shadow-[6px_6px_0px_0px_rgba(66,54,43,1)]">
 <div class="cat-ear-inner overflow-hidden flex items-center justify-center p-2">
+<button aria-label="Open image" class="w-full h-full focus:outline-none cursor-zoom-in" data-image-modal-trigger type="button">
 <img alt="" class="w-full h-full object-cover rounded-xl border-2 border-primary" src="images/img_2ff85e0f902d8b34.png">
+</button>
 </div>
 </div>
 </div>
@@ -340,15 +360,31 @@
 </div>
 </section>
 </main>
+<div aria-hidden="true" aria-modal="true" class="fixed inset-0 z-[100] hidden" id="image-modal" role="dialog">
+<div class="absolute inset-0 bg-black/60" data-image-modal-backdrop></div>
+<div class="relative w-full h-full flex items-center justify-center px-margin-mobile md:px-margin-desktop py-10">
+<div class="cat-ear-wrapper inline-block" data-image-modal-content>
+<div class="cat-ear-card bg-surface-container-lowest rounded-2xl shadow-[8px_8px_0px_0px_rgba(66,54,43,1)] inline-block">
+<div class="cat-ear-inner p-3 md:p-4 inline-block">
+<div class="flex justify-end pb-2">
+<button class="w-11 h-11 rounded-full border-2 border-primary shadow-[3px_3px_0px_0px_rgba(66,54,43,1)] flex items-center justify-center bg-surface-container-lowest text-primary active:scale-95 transition-transform" id="image-modal-close" type="button">
+<span class="material-symbols-outlined text-[26px]">close</span>
+</button>
+</div>
+<img alt="" class="block w-auto h-auto max-w-[92vw] md:max-w-[900px] max-h-[72vh] object-contain rounded-xl border-2 border-primary bg-surface" id="image-modal-img" src="">
+</div>
+</div>
+</div>
+</div>
+</div>
 <!-- Footer -->
 <footer class="bg-secondary-container dark:bg-inverse-surface w-full px-margin-mobile md:px-margin-desktop py-12 flex flex-col items-center gap-6 rounded-t-xl border-t-4 border-primary z-10 relative">
-<div class="font-headline-lg text-headline-lg text-primary flex items-center gap-2"><span class="material-symbols-outlined text-[32px]">pets</span> RoldoStudio</div>
+<div class="font-headline-lg text-headline-lg text-primary flex items-center gap-2"><span class="material-symbols-outlined text-[32px]">pets</span> Roldo Studios</div>
 <div class="flex gap-6">
-<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" data-i18n="footer.privacy" href="#">Privacy Policy</a>
-<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" data-i18n="footer.terms" href="#">Terms of Service</a>
-<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" data-i18n="footer.support" href="#">Support</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" data-i18n="footer.privacy" href="privacy/">Privacy Policy</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" data-i18n="footer.terms" href="terms/">Terms of Service</a>
 </div>
-<p class="font-body-md text-body-md text-on-secondary-container dark:text-on-primary-fixed text-center max-w-md" data-i18n="footer.copyright">© 2026 RoldoStudio. All rights reserved. Purr-fectly crafted for cozy gamers.</p>
+<p class="font-body-md text-body-md text-on-secondary-container dark:text-on-primary-fixed text-center max-w-md" data-i18n="footer.copyright">© 2026 Roldo Studios. All rights reserved. Purr-fectly crafted for cozy gamers.</p>
 </footer>
 
 
@@ -361,17 +397,17 @@
             const fallback = {
                 en: {
                     _lang: 'en',
-                    'nav.games': 'Games',
+                    'nav.games': 'Home',
                     'nav.about': 'About',
                     'nav.contact': 'Contact',
                     'nav.playNow': 'Play Now',
                     'footer.privacy': 'Privacy Policy',
                     'footer.terms': 'Terms of Service',
-                    'footer.support': 'Support',
-                    'footer.copyright': '© 2026 RoldoStudio. All rights reserved. Purr-fectly crafted for cozy gamers.',
+                    
+                    'footer.copyright': '© 2026 Roldo Studios. All rights reserved. Purr-fectly crafted for cozy gamers.',
                     'index.meta.title': 'PurringBlocks Studio',
-                    'index.about.heading': 'About RoldoStudio',
-                    'index.about.desc': "RoldoStudio is the independent creative force behind PurringBlocks. We're a small, passionate team dedicated to making cozy, high-quality mobile games.",
+                    'index.about.heading': 'About Roldo Studios',
+                    'index.about.desc': "Roldo Studios is the independent creative force behind PurringBlocks. We're a small, passionate team dedicated to making cozy, high-quality mobile games.",
                     'index.about.card1.title': 'Feline Passion',
                     'index.about.card1.desc': 'Designed for cat lovers in every detail.',
                     'index.about.card2.title': 'Indie Quality',
@@ -392,17 +428,17 @@
                 },
                 es: {
                     _lang: 'es',
-                    'nav.games': 'Juegos',
+                    'nav.games': 'Inicio',
                     'nav.about': 'Sobre nosotros',
                     'nav.contact': 'Contacto',
                     'nav.playNow': 'Jugar ahora',
                     'footer.privacy': 'Política de privacidad',
                     'footer.terms': 'Términos del servicio',
-                    'footer.support': 'Soporte',
-                    'footer.copyright': '© 2026 RoldoStudio. Todos los derechos reservados. Hecho con cariño para gamers cozy.',
+                    
+                    'footer.copyright': '© 2026 Roldo Studios. Todos los derechos reservados. Hecho con cariño para gamers cozy.',
                     'index.meta.title': 'PurringBlocks Studio',
-                    'index.about.heading': 'Acerca de RoldoStudio',
-                    'index.about.desc': 'RoldoStudio es la fuerza creativa e independiente detrás de PurringBlocks. Somos un pequeño equipo apasionado dedicado a crear juegos móviles acogedores y de alta calidad.',
+                    'index.about.heading': 'Acerca de Roldo Studios',
+                    'index.about.desc': 'Roldo Studios es la fuerza creativa e independiente detrás de PurringBlocks. Somos un pequeño equipo apasionado dedicado a crear juegos móviles acogedores y de alta calidad.',
                     'index.about.card1.title': 'Pasión felina',
                     'index.about.card1.desc': 'Diseñado especialmente para los amantes de los gatos en cada detalle.',
                     'index.about.card2.title': 'Calidad indie',
@@ -423,17 +459,17 @@
                 },
                 ca: {
                     _lang: 'ca',
-                    'nav.games': 'Jocs',
+                    'nav.games': 'Inici',
                     'nav.about': 'Sobre nosaltres',
                     'nav.contact': 'Contacte',
                     'nav.playNow': 'Juga ara',
                     'footer.privacy': 'Política de privacitat',
                     'footer.terms': 'Termes del servei',
-                    'footer.support': 'Suport',
-                    'footer.copyright': '© 2026 RoldoStudio. Tots els drets reservats. Fet amb estima per a gamers cozy.',
+                    
+                    'footer.copyright': '© 2026 Roldo Studios. Tots els drets reservats. Fet amb estima per a gamers cozy.',
                     'index.meta.title': 'PurringBlocks Studio',
-                    'index.about.heading': 'Sobre RoldoStudio',
-                    'index.about.desc': 'RoldoStudio és la força creativa independent darrere de PurringBlocks. Som un petit equip apassionat dedicat a crear jocs mòbils acollidors i d’alta qualitat.',
+                    'index.about.heading': 'Sobre Roldo Studios',
+                    'index.about.desc': 'Roldo Studios és la força creativa independent darrere de PurringBlocks. Som un petit equip apassionat dedicat a crear jocs mòbils acollidors i d’alta qualitat.',
                     'index.about.card1.title': 'Passió felina',
                     'index.about.card1.desc': 'Dissenyat especialment per als amants dels gats en cada detall.',
                     'index.about.card2.title': 'Qualitat indie',
@@ -532,6 +568,52 @@
                     setAllSelects(next);
                     load(next);
                 });
+            });
+
+            const modal = document.getElementById('image-modal');
+            const modalImg = document.getElementById('image-modal-img');
+            const modalClose = document.getElementById('image-modal-close');
+            const modalBackdrop = modal?.querySelector('[data-image-modal-backdrop]');
+            const modalContent = modal?.querySelector('[data-image-modal-content]');
+            const triggers = Array.from(document.querySelectorAll('[data-image-modal-trigger]'));
+
+            const closeModal = () => {
+                if (!modal) return;
+                modal.classList.add('hidden');
+                modal.setAttribute('aria-hidden', 'true');
+                document.body.classList.remove('overflow-hidden');
+                if (modalImg) {
+                    modalImg.src = '';
+                    modalImg.alt = '';
+                }
+            };
+
+            const openModal = (img) => {
+                if (!modal || !modalImg) return;
+                const src = img.getAttribute('src') || img.src;
+                const alt = img.getAttribute('alt') || '';
+                modalImg.src = src;
+                modalImg.alt = alt;
+                modal.classList.remove('hidden');
+                modal.setAttribute('aria-hidden', 'false');
+                document.body.classList.add('overflow-hidden');
+                modalClose?.focus();
+            };
+
+            triggers.forEach((btn) => {
+                const img = btn.querySelector('img');
+                if (!img) return;
+                btn.addEventListener('click', () => openModal(img));
+            });
+
+            modalClose?.addEventListener('click', closeModal);
+            modalBackdrop?.addEventListener('click', closeModal);
+            modal?.addEventListener('click', (e) => {
+                if (!modalContent) return;
+                if (!modalContent.contains(e.target)) closeModal();
+            });
+            window.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) closeModal();
             });
 
             load(lang);

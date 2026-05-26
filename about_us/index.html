@@ -3,8 +3,9 @@
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>About Us - RoldoStudio</title>
+<title>About Us - Roldo Studios</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="../images/REFERENCE.png" rel="icon" type="image/png">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Quicksand:wght@500;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -133,9 +134,9 @@
 <body class="bg-surface text-on-surface font-body-md overflow-x-hidden min-h-screen flex flex-col">
 <nav class="bg-surface dark:bg-inverse-surface w-full z-50 sticky top-0 border-b-4 border-primary dark:border-on-primary-fixed-variant shadow-[4px_4px_0px_0px_rgba(66,54,43,1)]">
 <div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
-<div class="text-headline-lg font-headline-lg font-black text-primary dark:text-primary-fixed-dim">RoldoStudio</div>
+<a class="text-headline-lg font-headline-lg font-black text-primary dark:text-primary-fixed-dim hover:scale-95 transition-transform" href="../">Roldo Studios</a>
 <div class="hidden md:flex gap-8 items-center">
-<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:bg-surface-container-high transition-transform hover:scale-95" data-i18n="nav.games" href="../">Games</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:bg-surface-container-high transition-transform hover:scale-95" data-i18n="nav.games" href="../">Home</a>
 <a class="text-primary font-bold border-b-2 border-primary pb-1 hover:bg-surface-container-high transition-transform hover:scale-95" data-i18n="nav.about" href="../about_us/">About</a>
 <a class="text-on-surface-variant dark:text-surface-variant font-medium hover:bg-surface-container-high transition-transform hover:scale-95" data-i18n="nav.contact" href="../contact/">Contact</a>
 </div>
@@ -159,7 +160,7 @@
 </div>
 <div class="md:hidden hidden w-full px-margin-mobile pb-4 max-w-container-max mx-auto" id="mobile-nav">
 <div class="bg-surface-container-lowest border-2 border-primary rounded-2xl shadow-[4px_4px_0px_0px_rgba(66,54,43,1)] p-4 flex flex-col gap-4">
-<a class="text-on-surface-variant font-medium w-fit" data-i18n="nav.games" href="../">Games</a>
+<a class="text-on-surface-variant font-medium w-fit" data-i18n="nav.games" href="../">Home</a>
 <a class="text-primary font-bold border-b-2 border-primary pb-1 w-fit" data-i18n="nav.about" href="../about_us/">About</a>
 <a class="text-on-surface-variant font-medium w-fit" data-i18n="nav.contact" href="../contact/">Contact</a>
 <div class="flex items-center gap-2 pt-1">
@@ -240,13 +241,12 @@
 
 </main>
 <footer class="bg-secondary-container dark:bg-inverse-surface w-full px-margin-mobile md:px-margin-desktop py-12 flex flex-col items-center gap-6 rounded-t-xl border-t-4 border-primary z-10 relative">
-<div class="font-headline-lg text-headline-lg text-primary flex items-center gap-2"><span class="material-symbols-outlined text-[32px]">pets</span> RoldoStudio</div>
+<div class="font-headline-lg text-headline-lg text-primary flex items-center gap-2"><span class="material-symbols-outlined text-[32px]">pets</span> Roldo Studios</div>
 <div class="flex gap-6">
-<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" data-i18n="footer.privacy" href="#">Privacy Policy</a>
-<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" data-i18n="footer.terms" href="#">Terms of Service</a>
-<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" data-i18n="footer.support" href="#">Support</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" data-i18n="footer.privacy" href="../privacy/">Privacy Policy</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" data-i18n="footer.terms" href="../terms/">Terms of Service</a>
 </div>
-<p class="font-body-md text-body-md text-on-secondary-container dark:text-on-primary-fixed text-center max-w-md" data-i18n="footer.copyright">© 2024 RoldoStudio. All rights reserved. Purr-fectly crafted for cozy gamers.</p>
+<p class="font-body-md text-body-md text-on-secondary-container dark:text-on-primary-fixed text-center max-w-md" data-i18n="footer.copyright">© 2024 Roldo Studios. All rights reserved. Purr-fectly crafted for cozy gamers.</p>
 </footer>
 <script>
         (() => {
@@ -254,6 +254,86 @@
             const storageKey = 'lang';
             const selects = Array.from(document.querySelectorAll('[data-lang-select]'));
             const pageTitleKey = 'about.meta.title';
+            const fallback = {
+                en: {
+                    _lang: 'en',
+                    'nav.games': 'Home',
+                    'nav.about': 'About',
+                    'nav.contact': 'Contact',
+                    'nav.playNow': 'Play Now',
+                    'footer.privacy': 'Privacy Policy',
+                    'footer.terms': 'Terms of Service',
+                    'footer.copyright': '© 2026 Roldo Studios. All rights reserved. Purr-fectly crafted for cozy gamers.',
+                    'about.meta.title': 'About Us - Roldo Studios',
+                    'about.hero.title': 'Meet the Team',
+                    'about.hero.desc': "We're a small group of cat and videogame enthusiasts, dedicated to creating the coziest, most purr-fect digital experiences.",
+                    'about.role.producer': 'Producer',
+                    'about.role.developer': 'Developer',
+                    'about.role.gameDesigner': 'Game Designer',
+                    'about.role.artist': 'Artist',
+                    'about.member1.desc': 'The brain behind the logistics. Ivan makes sure every block is in place while coding new feline adventures.',
+                    'about.member2.desc': "Code wizard and optimization expert. If there's a bug, Ton will find it and turn it into an adorable feature.",
+                    'about.member3.desc': 'Dream architect. Edu designs mechanics that feel like being wrapped in a warm blanket on a rainy day.',
+                    'about.member4.desc': "The team's magic brush. Joan brings our characters to life with vibrant colors and textures you can almost pet.",
+                    'about.philosophy.heading': 'Our Philosophy',
+                    'about.philosophy.love.title': 'Made with Love',
+                    'about.philosophy.love.desc': 'Every pixel is placed with the care of petting a sleeping cat.',
+                    'about.philosophy.wholesome.title': 'Wholesome Gameplay',
+                    'about.philosophy.wholesome.desc': 'We prioritize peace of mind and joy over competitive stress.'
+                },
+                es: {
+                    _lang: 'es',
+                    'nav.games': 'Inicio',
+                    'nav.about': 'Sobre nosotros',
+                    'nav.contact': 'Contacto',
+                    'nav.playNow': 'Jugar ahora',
+                    'footer.privacy': 'Política de privacidad',
+                    'footer.terms': 'Términos del servicio',
+                    'footer.copyright': '© 2026 Roldo Studios. Todos los derechos reservados. Hecho con cariño para gamers cozy.',
+                    'about.meta.title': 'Sobre nosotros - Roldo Studios',
+                    'about.hero.title': 'Conoce al equipo',
+                    'about.hero.desc': 'Somos un pequeño grupo de entusiastas de los gatos y los videojuegos, dedicados a crear las experiencias más acogedoras y purr-fectas del mundo digital.',
+                    'about.role.producer': 'Productor',
+                    'about.role.developer': 'Desarrollador',
+                    'about.role.gameDesigner': 'Diseñador de juego',
+                    'about.role.artist': 'Artista',
+                    'about.member1.desc': 'El cerebro detrás de la logística. Ivan se asegura de que cada bloque esté en su lugar mientras programa nuevas aventuras gatunas.',
+                    'about.member2.desc': 'Maestro del código y experto en optimización. Si hay un bug, Ton lo encontrará y lo convertirá en una funcionalidad adorable.',
+                    'about.member3.desc': 'Arquitecto de sueños. Edu diseña mecánicas que te harán sentir como si estuvieras envuelto en una manta caliente un día de lluvia.',
+                    'about.member4.desc': 'El pincel mágico del equipo. Joan da vida a nuestros personajes con colores vibrantes y texturas que casi puedes acariciar.',
+                    'about.philosophy.heading': 'Nuestra filosofía',
+                    'about.philosophy.love.title': 'Hecho con amor',
+                    'about.philosophy.love.desc': 'Cada píxel es colocado con el cuidado de quien acaricia a un gato dormido.',
+                    'about.philosophy.wholesome.title': 'Jugabilidad wholesome',
+                    'about.philosophy.wholesome.desc': 'Priorizamos la paz mental y la alegría sobre el estrés competitivo.'
+                },
+                ca: {
+                    _lang: 'ca',
+                    'nav.games': 'Inici',
+                    'nav.about': 'Sobre nosaltres',
+                    'nav.contact': 'Contacte',
+                    'nav.playNow': 'Juga ara',
+                    'footer.privacy': 'Política de privacitat',
+                    'footer.terms': 'Termes del servei',
+                    'footer.copyright': '© 2026 Roldo Studios. Tots els drets reservats. Fet amb estima per a gamers cozy.',
+                    'about.meta.title': 'Sobre nosaltres - Roldo Studios',
+                    'about.hero.title': 'Coneix l’equip',
+                    'about.hero.desc': 'Som un petit grup d’entusiastes dels gats i els videojocs, dedicats a crear les experiències digitals més acollidores i purr-fectes.',
+                    'about.role.producer': 'Productor',
+                    'about.role.developer': 'Desenvolupador',
+                    'about.role.gameDesigner': 'Dissenyador de joc',
+                    'about.role.artist': 'Artista',
+                    'about.member1.desc': 'El cervell darrere la logística. L’Ivan s’assegura que cada bloc sigui al seu lloc mentre programa noves aventures felines.',
+                    'about.member2.desc': 'Mestre del codi i expert en optimització. Si hi ha un bug, en Ton el trobarà i el convertirà en una funcionalitat adorable.',
+                    'about.member3.desc': 'Arquitecte de somnis. L’Edu dissenya mecàniques que et faran sentir com si estiguessis embolicat amb una manta calenta en un dia de pluja.',
+                    'about.member4.desc': 'El pinzell màgic de l’equip. En Joan dona vida als nostres personatges amb colors vibrants i textures que gairebé pots acariciar.',
+                    'about.philosophy.heading': 'La nostra filosofia',
+                    'about.philosophy.love.title': 'Fet amb amor',
+                    'about.philosophy.love.desc': 'Cada píxel es col·loca amb la cura de qui acaricia un gat adormit.',
+                    'about.philosophy.wholesome.title': 'Jugabilitat wholesome',
+                    'about.philosophy.wholesome.desc': 'Prioritzem la pau mental i l’alegria per sobre de l’estrès competitiu.'
+                }
+            };
 
             const getLang = () => {
                 const v = localStorage.getItem(storageKey);
@@ -298,7 +378,9 @@
                     if (!res.ok) throw new Error('fetch_failed');
                     const dict = await res.json();
                     apply(dict, lang);
-                } catch (_) {}
+                } catch (_) {
+                    if (fallback[lang]) apply(fallback[lang], lang);
+                }
             };
 
             const toggleBtn = document.getElementById('nav-toggle');
