@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sobre Nosotros - RoldoStudio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Quicksand:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-high": "#e9e8e5",
+                    "on-secondary-fixed": "#201b0c",
+                    "primary-container": "#5a4d41",
+                    "surface-tint": "#6a5c4f",
+                    "surface-dim": "#dbdad7",
+                    "surface-variant": "#e3e2e0",
+                    "inverse-primary": "#d6c3b4",
+                    "primary": "#42362b",
+                    "outline": "#7f756e",
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#f2f1ee",
+                    "surface-container-highest": "#e3e2e0",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#703537",
+                    "on-primary-fixed-variant": "#514439",
+                    "secondary-fixed": "#ece2c9",
+                    "surface-container-low": "#f4f3f1",
+                    "surface-container": "#efeeeb",
+                    "on-primary-container": "#d0beaf",
+                    "tertiary-fixed": "#ffdad9",
+                    "primary-fixed-dim": "#d6c3b4",
+                    "error": "#ba1a1a",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed-dim": "#ffb3b3",
+                    "on-error-container": "#93000a",
+                    "on-surface-variant": "#4d453f",
+                    "on-tertiary-container": "#feacac",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "on-background": "#1a1c1a",
+                    "secondary-container": "#ece2c9",
+                    "primary-fixed": "#f2dfcf",
+                    "surface-bright": "#faf9f6",
+                    "secondary-fixed-dim": "#cfc6ae",
+                    "outline-variant": "#d0c4bb",
+                    "background": "#faf9f6",
+                    "inverse-surface": "#2f312f",
+                    "surface": "#faf9f6",
+                    "on-secondary-container": "#6b6450",
+                    "on-primary-fixed": "#231a10",
+                    "on-surface": "#1a1c1a",
+                    "secondary": "#645e4b",
+                    "on-secondary-fixed-variant": "#4c4634",
+                    "error-container": "#ffdad6",
+                    "tertiary": "#5e2729",
+                    "tertiary-container": "#7a3d3f",
+                    "on-tertiary-fixed": "#390b0e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "container-max": "1200px",
+                    "unit": "8px",
+                    "margin-mobile": "20px",
+                    "margin-desktop": "80px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Quicksand"],
+                    "body-lg": ["Quicksand"],
+                    "headline-xl": ["Plus Jakarta Sans"],
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "label-bold": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "label-bold": ["14px", {"lineHeight": "1.2", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+            vertical-align: middle;
+        }
+        .kawaii-button {
+            transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+        }
+        .kawaii-button:active {
+            transform: translateY(4px);
+            box-shadow: 0px 0px 0px 0px #42362b;
+        }
+        .bg-paw-pattern {
+            background-image: radial-gradient(#d6c3b4 15%, transparent 16%), radial-gradient(#d6c3b4 15%, transparent 16%);
+            background-size: 60px 60px;
+            background-position: 0 0, 30px 30px;
+        }
+        .polka-dot {
+            background-image: radial-gradient(#d0c4bb 1.5px, transparent 1.5px);
+            background-size: 24px 24px;
+            background-color: #faf9f6;
+        }
+        .cat-ear::before, .cat-ear::after {
+            content: '';
+            position: absolute;
+            top: -12px;
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-bottom: 15px solid #42362b;
+            z-index: 10;
+        }
+
+
+        .block-shadow {
+            box-shadow: 6px 6px 0px 0px rgba(66, 54, 43, 1);
+        }
+        .hover-squish:hover {
+            transform: scale(0.98);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="bg-surface dark:bg-inverse-surface w-full z-50 sticky top-0 border-b-4 border-primary dark:border-on-primary-fixed-variant shadow-[4px_4px_0px_0px_rgba(66,54,43,1)]">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="text-headline-lg font-headline-lg font-black text-primary dark:text-primary-fixed-dim">RoldoStudio</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:bg-surface-container-high transition-transform hover:scale-95" href="index.html">Games</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 hover:bg-surface-container-high transition-transform hover:scale-95" href="about_us.html">About</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:bg-surface-container-high transition-transform hover:scale-95" href="contact.html">Contact</a>
+</div>
+<button class="kawaii-button bg-tertiary-fixed text-primary font-label-bold text-label-bold px-6 py-2 rounded-full border-3 border-primary shadow-[4px_4px_0px_0px_rgba(66,54,43,1)] flex items-center gap-2">
+                Play Now
+            </button>
+</div>
+</nav>
+<main class="flex-grow bg-paw-pattern">
+<!-- Hero / Header Section -->
+<header class="py-16 md:py-24 text-center relative overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile">
+<div class="bg-surface-container-low border-4 border-primary rounded-[2rem] p-8 md:p-10 shadow-[8px_8px_0px_0px_rgba(66,54,43,1)] max-w-3xl mx-auto">
+<h1 class="font-headline-xl text-headline-xl md:text-headline-xl mb-4 text-primary">
+                Conoce al Equipo
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                Somos un pequeño grupo de entusiastas de los gatos y los videojuegos, dedicados a crear las experiencias más acogedoras y purr-fectas del mundo digital.
+            </p>
+</div>
+</div>
+<!-- Decorative Cat Tail -->
+<div class="absolute -bottom-4 left-1/2 -translate-x-1/2 w-full h-8 opacity-20">
+<svg class="w-full h-full fill-primary" preserveaspectratio="none" viewbox="0 0 1200 120">
+<path d="M0,60 C150,110 350,10 500,60 C650,110 850,10 1000,60 C1150,110 1350,10 1500,60 L1500,120 L0,120 Z"></path>
+</svg>
+</div>
+</header>
+<!-- Team Grid Canvas -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-20">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+<!-- Member 1: Ivan Pelegri -->
+<div class="relative group">
+<div class="bg-surface border-[3px] border-primary rounded-xl p-6 block-shadow transition-all duration-300 group-hover:-translate-y-2 flex flex-col h-full">
+<div class="aspect-square mb-6 overflow-hidden rounded-lg bg-secondary-container relative">
+<img alt="Ivan Pelegri" class="w-full h-full object-cover" src="images/img_c697b550659d8961.jpg"/>
+</div>
+<h3 class="font-headline-lg text-headline-lg mb-1 text-primary text-center">Ivan<br/>Pelegrí</h3>
+<div class="bg-tertiary-container text-on-tertiary px-3 py-1 rounded-full text-label-bold font-label-bold self-center mb-4">
+                        Producer
+                    </div>
+<p class="text-body-md text-on-surface-variant text-center leading-relaxed">
+                        El cerebro detrás de la logística. Ivan se asegura de que cada bloque esté en su lugar mientras programa nuevas aventuras gatunas.
+                    </p>
+</div>
+</div>
+<!-- Member 2: Ton -->
+<div class="relative group">
+<div class="bg-surface border-[3px] border-primary rounded-xl p-6 block-shadow transition-all duration-300 group-hover:-translate-y-2 flex flex-col h-full">
+<div class="aspect-square mb-6 overflow-hidden rounded-lg bg-secondary-container  relative">
+<img alt="Ton" class="w-full h-full object-cover" src="images/img_7f7ebd79d50b3af4.jpg"/>
+</div>
+<h3 class="font-headline-lg text-headline-lg mb-1 text-primary text-center">Ton<br/>Llucià</h3>
+<div class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-bold font-label-bold self-center mb-4">
+                        Developer
+                    </div>
+<p class="text-body-md text-on-surface-variant text-center leading-relaxed">
+                        Maestro del código y experto en optimización. Si hay un bug, Ton lo encontrará y lo convertirá en una funcionalidad adorable.
+                    </p>
+</div>
+</div>
+<!-- Member 3: Edu Sles -->
+<div class="relative group">
+<div class="bg-surface border-[3px] border-primary rounded-xl p-6 block-shadow transition-all duration-300 group-hover:-translate-y-2 flex flex-col h-full">
+<div class="aspect-square mb-6 overflow-hidden rounded-lg bg-secondary-container relative">
+<img alt="Edu Sles cat character" class="w-full h-full object-cover" src="images/img_54de06613a403f42.png"/>
+</div>
+<h3 class="font-headline-lg text-headline-lg mb-1 text-primary text-center">Eduard<br/>Sales</h3>
+<div class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full text-label-bold font-label-bold self-center mb-4">
+                        Game Designer
+                    </div>
+<p class="text-body-md text-on-surface-variant text-center leading-relaxed">
+                        Arquitecto de sueños. Edu diseña mecánicas que te harán sentir como si estuvieras envuelto en una manta caliente un día de lluvia.
+                    </p>
+</div>
+</div>
+<!-- Member 4: Joan Arno -->
+<div class="relative group">
+<div class="bg-surface border-[3px] border-primary rounded-xl p-6 block-shadow transition-all duration-300 group-hover:-translate-y-2 flex flex-col h-full">
+<div class="aspect-square mb-6 overflow-hidden rounded-lg bg-secondary-container relative">
+<img alt="Joan Arnó" class="w-full h-full object-cover" src="images/img_0cb8786a2b896b5d.png"/>
+</div>
+<h3 class="font-headline-lg text-headline-lg mb-1 text-primary text-center">Joan<br/>Arnó</h3>
+<div class="bg-tertiary-fixed-dim text-on-tertiary-fixed-variant px-3 py-1 rounded-full text-label-bold font-label-bold self-center mb-4">
+                        Artist
+                    </div>
+<p class="text-body-md text-on-surface-variant text-center leading-relaxed">
+                        El pincel mágico del equipo. Joan da vida a nuestros personajes con colores vibrantes y texturas que casi puedes acariciar.
+                    </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Studio Philosophy Section -->
+<section class="bg-secondary-fixed py-20 mt-12 relative">
+<div class="max-w-container-max mx-auto px-margin-mobile flex flex-col md:flex-row items-center gap-12">
+<div class="flex-1 space-y-6">
+<h2 class="font-headline-lg text-headline-lg text-primary">Nuestra Filosofía</h2>
+<div class="space-y-4">
+<div class="flex gap-4 items-start">
+<div class="bg-primary text-on-primary p-2 rounded-lg">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-primary">Hecho con Amor</h4>
+<p class="text-body-md text-on-secondary-fixed-variant">Cada píxel es colocado con el cuidado de quien acaricia a un gato dormido.</p>
+</div>
+</div>
+<div class="flex gap-4 items-start">
+<div class="bg-primary text-on-primary p-2 rounded-lg">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">toys</span>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-primary">Jugabilidad Wholesome</h4>
+<p class="text-body-md text-on-secondary-fixed-variant">Priorizamos la paz mental y la alegría sobre el estrés competitivo.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex-1 w-full max-w-sm">
+<div class="bg-surface border-[4px] border-primary rounded-3xl p-4 block-shadow rotate-2">
+<img class="w-full h-64 object-cover rounded-2xl border-2 border-primary" data-alt="A cozy, sunlit game studio workspace with soft pastel colors, cute cat plushies on the desks, and large windows looking out onto a peaceful green garden. The lighting is warm and golden, creating a serene and inviting atmosphere that perfectly matches the studio's kawaii aesthetic." src="images/img_5b8da9068829aaa3.png"/>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-secondary-container dark:bg-inverse-surface w-full px-margin-mobile md:px-margin-desktop py-12 flex flex-col items-center gap-6 rounded-t-xl border-t-4 border-primary z-10 relative">
+<div class="font-headline-lg text-headline-lg text-primary flex items-center gap-2"><span class="material-symbols-outlined text-[32px]">pets</span> RoldoStudio</div>
+<div class="flex gap-6">
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" href="#">Support</a>
+</div>
+<p class="font-body-md text-body-md text-on-secondary-container dark:text-on-primary-fixed text-center max-w-md">            ) 2024 RoldoStudio. All rights reserved. Purr-fectly crafted for cozy gamers.
+        </p>
+</footer>
+<script>
+
+    </script>
+</body></html>
