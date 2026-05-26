@@ -1,0 +1,312 @@
+<!DOCTYPE html><html class="light" lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>PurringBlocks Studio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;family=Quicksand:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#2f312f",
+                        "surface-container-high": "#e9e8e5",
+                        "tertiary-fixed": "#ffdad9",
+                        "on-secondary-fixed": "#201b0c",
+                        "on-background": "#1a1c1a",
+                        "surface-container-highest": "#e3e2e0",
+                        "surface-tint": "#6a5c4f",
+                        "on-primary": "#ffffff",
+                        "on-primary-container": "#d0beaf",
+                        "on-primary-fixed-variant": "#514439",
+                        "secondary": "#645e4b",
+                        "on-secondary-fixed-variant": "#4c4634",
+                        "tertiary-fixed-dim": "#ffb3b3",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#faf9f6",
+                        "on-surface": "#1a1c1a",
+                        "surface-container-low": "#f4f3f1",
+                        "on-tertiary-container": "#feacac",
+                        "surface-container": "#efeeeb",
+                        "secondary-fixed-dim": "#cfc6ae",
+                        "primary-fixed": "#f2dfcf",
+                        "on-secondary": "#ffffff",
+                        "background": "#faf9f6",
+                        "on-primary-fixed": "#231a10",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#6b6450",
+                        "outline-variant": "#d0c4bb",
+                        "on-tertiary-fixed": "#390b0e",
+                        "primary-fixed-dim": "#d6c3b4",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#7a3d3f",
+                        "secondary-container": "#ece2c9",
+                        "surface-dim": "#dbdad7",
+                        "surface-variant": "#e3e2e0",
+                        "on-surface-variant": "#4d453f",
+                        "inverse-on-surface": "#f2f1ee",
+                        "outline": "#7f756e",
+                        "tertiary": "#5e2729",
+                        "surface-bright": "#faf9f6",
+                        "primary-container": "#5a4d41",
+                        "inverse-primary": "#d6c3b4",
+                        "secondary-fixed": "#ece2c9",
+                        "on-tertiary-fixed-variant": "#703537",
+                        "primary": "#42362b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "container-max": "1200px",
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "margin-desktop": "80px"
+                    },
+                    "fontFamily": {
+                        "label-bold": ["Plus Jakarta Sans"],
+                        "body-md": ["Quicksand"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-lg": ["Quicksand"],
+                        "headline-xl": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-bold": ["14px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "500" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .kawaii-button {
+            transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+        }
+        .kawaii-button:active {
+            transform: translateY(4px);
+            box-shadow: 0px 0px 0px 0px #42362b;
+        }
+        .bg-paw-pattern {
+            background-image: radial-gradient(#d6c3b4 15%, transparent 16%), radial-gradient(#d6c3b4 15%, transparent 16%);
+            background-size: 60px 60px;
+            background-position: 0 0, 30px 30px;
+        }
+        .cat-ear-card {
+            position: relative;
+        }
+        .cat-ear-card::before, .cat-ear-card::after {
+            content: '';
+            position: absolute;
+            top: -16px;
+            width: 32px;
+            height: 32px;
+            background-color: inherit;
+            border: 3px solid #42362b;
+            border-bottom: none;
+            border-right: none;
+            transform: rotate(45deg);
+            z-index: -1;
+        }
+        .cat-ear-card::before {
+            left: 20px;
+        }
+        .cat-ear-card::after {
+            right: 20px;
+        }
+        /* Fix for ears overlapping card border */
+        .cat-ear-inner {
+            position: relative;
+            z-index: 10;
+            background-color: inherit;
+            border-radius: inherit;
+            border: 3px solid #42362b;
+            height: 100%;
+        }
+        .cat-ear-wrapper {
+            position: relative;
+            padding-top: 16px; /* space for ears */
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="bg-surface dark:bg-inverse-surface w-full z-50 sticky top-0 border-b-4 border-primary dark:border-on-primary-fixed-variant shadow-[4px_4px_0px_0px_rgba(66,54,43,1)]">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="text-headline-lg font-headline-lg font-black text-primary dark:text-primary-fixed-dim">RoldoStudio</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 hover:bg-surface-container-high transition-transform hover:scale-95" href="#">Games</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:bg-surface-container-high transition-transform hover:scale-95" href="#">About</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:bg-surface-container-high transition-transform hover:scale-95" href="#">Contact</a>
+</div>
+<button class="kawaii-button bg-tertiary-fixed text-primary font-label-bold text-label-bold px-6 py-2 rounded-full border-3 border-primary shadow-[4px_4px_0px_0px_rgba(66,54,43,1)] flex items-center gap-2">
+                Play Now
+            </button>
+</div>
+</nav>
+<main class="flex-grow bg-paw-pattern relative z-0">
+<section class="w-full px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto text-center"><div class="bg-surface-container-low border-4 border-primary p-8 md:p-12 rounded-[2rem] shadow-[8px_8px_0px_0px_rgba(66,54,43,1)] relative overflow-hidden">
+    <div class="relative z-10">
+        <div class="flex flex-col items-center mb-10">
+            <h2 class="font-headline-lg text-primary">Acerca de RoldoStudio</h2>
+            <div class="h-1 w-24 bg-primary rounded-full mt-2"></div>
+        </div>
+        
+        <p class="font-body-lg text-on-surface-variant max-w-3xl mx-auto leading-relaxed mb-12 text-center">
+            RoldoStudio es la fuerza creativa e independiente detrás de PurringBlocks. Somos un pequeño equipo apasionado dedicado a crear juegos móviles acogedores y de alta calidad.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-surface p-6 rounded-2xl border-2 border-primary shadow-[4px_4px_0px_0px_rgba(66,54,43,1)] flex flex-col items-center transition-transform hover:-translate-y-1">
+                <span class="material-symbols-outlined text-primary text-4xl mb-3">pets</span>
+                <h3 class="font-label-bold text-primary mb-2 uppercase tracking-wider">Pasión Felina</h3>
+                <p class="font-body-md text-on-surface-variant text-center">Diseñado especialmente para los amantes de los gatos en cada detalle.</p>
+            </div>
+            <div class="bg-surface p-6 rounded-2xl border-2 border-primary shadow-[4px_4px_0px_0px_rgba(66,54,43,1)] flex flex-col items-center transition-transform hover:-translate-y-1">
+                <span class="material-symbols-outlined text-primary text-4xl mb-3">auto_awesome</span>
+                <h3 class="font-label-bold text-primary mb-2 uppercase tracking-wider">Calidad Indie</h3>
+                <p class="font-body-md text-on-surface-variant text-center">Cuidado artesanal y atención al detalle en cada píxel que creamos.</p>
+            </div>
+            <div class="bg-surface p-6 rounded-2xl border-2 border-primary shadow-[4px_4px_0px_0px_rgba(66,54,43,1)] flex flex-col items-center transition-transform hover:-translate-y-1">
+                <span class="material-symbols-outlined text-primary text-4xl mb-3">magic_button</span>
+                <h3 class="font-label-bold text-primary mb-2 uppercase tracking-wider">Magia Cotidiana</h3>
+                <p class="font-body-md text-on-surface-variant text-center">Brindamos paz, alegría y un toque de magia a tu vida diaria.</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Decor elements -->
+    <span class="material-symbols-outlined absolute -top-8 -left-8 text-[120px] text-primary-fixed-dim opacity-10 transform -rotate-12 select-none">favorite</span>
+    <span class="material-symbols-outlined absolute -bottom-8 -right-8 text-[120px] text-primary-fixed-dim opacity-10 transform rotate-12 select-none">pets</span>
+</div></section>
+<!-- Hero Section -->
+<section class="w-full px-margin-mobile md:px-margin-desktop py-16 md:py-24 max-w-container-max mx-auto flex flex-col items-center justify-center text-center relative">
+<div class="relative w-full max-w-4xl mx-auto flex flex-col items-center">
+<!-- Key Art Background -->
+<div class="w-full aspect-[4/3] md:aspect-video rounded-3xl overflow-hidden border-[5px] border-primary shadow-[8px_8px_0px_0px_rgba(66,54,43,1)] relative group">
+<img alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmCNSIBKWINh7z8Wij-Ec9IOfsXYxIMrOpCXQdcedoX2iQCmKa7oeuAbtvsLecJ0MMT88pD_eAjXTfzEJJB4IaaVZgflGkq8Psi8Du4mJAGpQH0D4GxTwo4TeoVYdc8886TGw-r8TbJtI_l-qGStxR-YaDhVY75_roVW0Q-4N-G50kOF6BAgCn4Cr0Wyy0sehfGDNYE2vjp6pEBGSqNUfHbzGPTrNZyFHUKxazOlvBzD3-GA_4j48hciNOeUsWhQEUcYgzPXxq8Q">
+<!-- Gradient overlay for better text readability if needed -->
+<div class="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent flex flex-col justify-end items-center pb-12">
+<!-- Logo superimposed -->
+<img alt="" class="w-2/3 md:w-1/2 max-w-[400px] drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)] mb-8 transform -rotate-2 hover:rotate-2 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2JSg95V4YMWZhTgmCO1YWZcR8o7KtSeyRgRNR6CC024W6EANrf2qi5kCt0ufioQQqZy6KrhTKtRURsqWhMz7kPozJlVwbSPQmSFwcQbX93TP5l5MDcLr5VEzs_mnlhwChZq4vMM4SmLn124T9QR3Ur05TyDmXe-kWeVD5CIvCqtVCgcorQCNNCiQdJhzN-jIRRWKwU1Ns1MACRTimeC-xOhepTEWDHXVUb6nshtqPNddIAC3wQm2wBvmWPpraKysLabXyLnTOsA">
+<button class="kawaii-button bg-tertiary-fixed-dim text-primary font-headline-lg-mobile md:font-headline-lg px-10 py-4 rounded-full border-[4px] border-primary shadow-[6px_6px_0px_0px_rgba(66,54,43,1)] flex items-center gap-3">
+<span class="material-symbols-outlined" style="font-size: 32px;">play_arrow</span>
+                            ¡Jugar Ahora!
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- About Us Section -->
+<section class="w-full px-margin-mobile md:px-margin-desktop py-16 bg-surface-container-low border-y-4 border-primary relative z-10">
+<!-- Wavy top decoration (CSS trick) -->
+<div class="absolute top-[-10px] left-0 w-full overflow-hidden leading-[0]">
+<svg class="relative block w-full h-[20px]" data-name="Layer 1" preserveAspectRatio="none" viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
+<path class="fill-surface" d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+</svg>
+</div>
+<div class="max-w-container-max mx-auto flex flex-col items-center text-center gap-6">
+<div class="inline-block bg-secondary-container px-6 py-2 rounded-full border-3 border-primary shadow-[3px_3px_0px_0px_rgba(66,54,43,1)] mb-4">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-primary">Juegos Perfectamente Creados</h2>
+</div>
+<p class="font-body-lg text-on-surface-variant max-w-2xl">
+                    En PurringBlocks Studio, vertemos nuestro amor por los gatos y el diseño acogedor en cada píxel. Creemos que los juegos móviles deben ser un cálido abrazo, una taza de té y un suave ronroneo en tu bolsillo.
+                </p>
+<div class="flex gap-4 mt-6">
+<span class="bg-primary-fixed text-primary font-label-bold px-4 py-1.5 rounded-full border-2 border-primary">#CozyGames</span>
+<span class="bg-tertiary-fixed text-primary font-label-bold px-4 py-1.5 rounded-full border-2 border-primary">#Kawaii</span>
+<span class="bg-secondary-fixed text-primary font-label-bold px-4 py-1.5 rounded-full border-2 border-primary">#CatLovers</span>
+</div>
+</div>
+</section>
+<!-- Featured Game Section -->
+<section class="w-full px-margin-mobile md:px-margin-desktop py-20 max-w-container-max mx-auto">
+<h3 class="font-headline-xl text-primary text-center mb-16 drop-shadow-[2px_2px_0px_rgba(214,195,180,1)]">
+                Nuestro Juego Destacado
+            </h3>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<!-- Visuals Bento Grid -->
+<div class="grid grid-cols-2 gap-4 h-full">
+<div class="cat-ear-wrapper h-[400px] transform -rotate-3 hover:rotate-0 transition-transform duration-300">
+<div class="cat-ear-card bg-surface-container-lowest h-full rounded-2xl shadow-[6px_6px_0px_0px_rgba(66,54,43,1)]">
+<div class="cat-ear-inner overflow-hidden flex items-center justify-center p-2">
+<img alt="" class="w-full h-full object-cover rounded-xl border-2 border-primary" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJrNXl8s9lYh3SwrVE78v5b6WOdIMEqGa61w-zjvQM35UNB6MSaDpMtSDPQc1hO8NscFGbzDxtkUCCvHkrwQFUtB5YXZMlD0SgpTvjE9QalY_tNrB9tGJNmWYt1gTR_Wm5OnzPUpEKHgMUHXPBPZoac2RNY2TI_F0rbgBTEdfgvETm1W8ncbYWgmcjUHKwXCrAzUCRpkyfFjX5PW0_l9tuodbxnETZFUvDCR4yJ0QhA07IhJkKFOukf8NhbcEjcjj_JqOp6QXmgA">
+</div>
+</div>
+</div>
+<div class="cat-ear-wrapper h-[400px] mt-12 transform rotate-2 hover:rotate-0 transition-transform duration-300">
+<div class="cat-ear-card bg-surface-container-lowest h-full rounded-2xl shadow-[6px_6px_0px_0px_rgba(66,54,43,1)]">
+<div class="cat-ear-inner overflow-hidden flex items-center justify-center p-2">
+<img alt="" class="w-full h-full object-cover rounded-xl border-2 border-primary" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWjQrlMSO1VOj0_6tn_wOGwzyg3SPQMaLesh4jpLUMX-VUyQwVRBTHZMRh9oJ4j2cQxB3zd1lhmeko0q3WAL8e0n5hoSaT-cd1FW4M_4GfrL5tugVsvM_J4OP8ZK6-kzn3b0vKXdIyRu_VjB55sT8IbwrcqEWz_jQSuoFn7ypF1vIKf-nHE9bQQkb_PUgS_bmBsbvV6pdOYQhrXC4EhmNDzNdxcYcSAecaBcsdUVLDCDPE6ijcZ61LMCXN4x0i8RbDsiqkBLwwIA">
+</div>
+</div>
+</div>
+</div>
+<!-- Text & CTA -->
+<div class="flex flex-col gap-8 bg-surface p-8 rounded-3xl border-4 border-primary shadow-[8px_8px_0px_0px_rgba(66,54,43,1)] relative overflow-hidden">
+<!-- Background decor -->
+<span class="material-symbols-outlined absolute -bottom-10 -right-10 text-[120px] text-primary-fixed opacity-50 transform rotate-[-20deg]">pets</span>
+<h4 class="font-headline-lg-mobile text-primary">Purring Blocks</h4>
+<p class="font-body-lg text-on-surface-variant">
+                        Descubre una experiencia de rompecabezas relajante donde lindos bloques con forma de gato encajan perfectamente. ¡Supera niveles, colecciona adorables compañeros felinos y disfruta de la relajante estética kawaii!
+                    </p>
+<ul class="space-y-3 font-body-md text-on-surface">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-weight="fill">star</span>
+<span class="">Mecánicas de puzzle intuitivas y relajantes</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-weight="fill">favorite</span>
+<span class="">Cientos de niveles con arte encantador</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-weight="fill">music_note</span>
+<span class="">Banda sonora lofi para calmar tu mente</span>
+</li>
+</ul>
+<!-- App Badges Placeholder -->
+<div class="flex flex-wrap gap-4 mt-4">
+<button class="kawaii-button bg-inverse-surface text-surface font-label-bold px-6 py-3 rounded-xl border-3 border-primary shadow-[4px_4px_0px_0px_rgba(66,54,43,1)] flex items-center gap-2">
+<span class="material-symbols-outlined">adb</span>
+                            Google Play
+                        </button>
+<button class="kawaii-button bg-inverse-surface text-surface font-label-bold px-6 py-3 rounded-xl border-3 border-primary shadow-[4px_4px_0px_0px_rgba(66,54,43,1)] flex items-center gap-2">
+<span class="material-symbols-outlined">phone_iphone</span>
+                            App Store
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-secondary-container dark:bg-inverse-surface w-full px-margin-mobile md:px-margin-desktop py-12 flex flex-col items-center gap-6 rounded-t-xl border-t-4 border-primary z-10 relative">
+<div class="font-headline-lg text-headline-lg text-primary flex items-center gap-2"><span class="material-symbols-outlined text-[32px]">pets</span> RoldoStudio</div>
+<div class="flex gap-6">
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" href="#">Support</a>
+</div>
+<p class="font-body-md text-body-md text-on-secondary-container dark:text-on-primary-fixed text-center max-w-md">            ) 2024 RoldoStudio. All rights reserved. Purr-fectly crafted for cozy gamers.
+        </p>
+</footer>
+
+
+</body></html>
