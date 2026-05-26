@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 
-<html class="light" lang="es"><head>
+<html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Sobre Nosotros - RoldoStudio</title>
+<title>About Us - RoldoStudio</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Quicksand:wght@500;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -136,6 +136,16 @@
         .hover-squish:hover {
             transform: scale(0.98);
         }
+        #lang-select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: transparent;
+            border: 0;
+            outline: none;
+            box-shadow: none;
+        }
+        #lang-select::-ms-expand { display: none; }
     </style>
 </head>
 <body class="bg-surface text-on-surface font-body-md overflow-x-hidden min-h-screen flex flex-col">
@@ -144,13 +154,24 @@
 <div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
 <div class="text-headline-lg font-headline-lg font-black text-primary dark:text-primary-fixed-dim">RoldoStudio</div>
 <div class="hidden md:flex gap-8 items-center">
-<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:bg-surface-container-high transition-transform hover:scale-95" href="index.html">Games</a>
-<a class="text-primary font-bold border-b-2 border-primary pb-1 hover:bg-surface-container-high transition-transform hover:scale-95" href="about_us.html">About</a>
-<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:bg-surface-container-high transition-transform hover:scale-95" href="contact.html">Contact</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:bg-surface-container-high transition-transform hover:scale-95" data-i18n="nav.games" href="index.html">Games</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 hover:bg-surface-container-high transition-transform hover:scale-95" data-i18n="nav.about" href="about_us.html">About</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:bg-surface-container-high transition-transform hover:scale-95" data-i18n="nav.contact" href="contact.html">Contact</a>
+</div>
+<div class="flex items-center gap-3">
+<div class="relative flex items-center gap-1 bg-surface-container-lowest border-2 border-primary rounded-full px-2 py-1 shadow-[3px_3px_0px_0px_rgba(66,54,43,1)]">
+<span class="material-symbols-outlined text-primary text-[18px]">language</span>
+<select aria-label="Language" class="appearance-none bg-transparent border-0 text-primary font-label-bold text-[12px] leading-none tracking-widest pr-6 focus:outline-none focus:ring-0" id="lang-select">
+<option value="en">EN</option>
+<option value="es">ES</option>
+<option value="ca">CAT</option>
+</select>
+<span class="material-symbols-outlined text-primary text-[18px] absolute right-2 pointer-events-none">expand_more</span>
 </div>
 <button class="kawaii-button bg-tertiary-fixed text-primary font-label-bold text-label-bold px-6 py-2 rounded-full border-3 border-primary shadow-[4px_4px_0px_0px_rgba(66,54,43,1)] flex items-center gap-2">
-                Play Now
-            </button>
+<span data-i18n="nav.playNow">Play Now</span>
+</button>
+</div>
 </div>
 </nav>
 <main class="flex-grow bg-paw-pattern">
@@ -158,12 +179,8 @@
 <header class="py-16 md:py-24 text-center relative overflow-hidden">
 <div class="max-w-container-max mx-auto px-margin-mobile">
 <div class="bg-surface-container-low border-4 border-primary rounded-[2rem] p-8 md:p-10 shadow-[8px_8px_0px_0px_rgba(66,54,43,1)] max-w-3xl mx-auto">
-<h1 class="font-headline-xl text-headline-xl md:text-headline-xl mb-4 text-primary">
-                Conoce al Equipo
-            </h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant">
-                Somos un pequeño grupo de entusiastas de los gatos y los videojuegos, dedicados a crear las experiencias más acogedoras y purr-fectas del mundo digital.
-            </p>
+<h1 class="font-headline-xl text-headline-xl md:text-headline-xl mb-4 text-primary" data-i18n="about.hero.title">Meet the Team</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant" data-i18n="about.hero.desc">We're a small group of cat and videogame enthusiasts, dedicated to creating the coziest, most purr-fect digital experiences.</p>
 </div>
 </div>
 <!-- Decorative Cat Tail -->
@@ -184,11 +201,9 @@
 </div>
 <h3 class="font-headline-lg text-headline-lg mb-1 text-primary text-center">Ivan<br/>Pelegrí</h3>
 <div class="bg-tertiary-container text-on-tertiary px-3 py-1 rounded-full text-label-bold font-label-bold self-center mb-4">
-                        Producer
+<span data-i18n="about.role.producer">Producer</span>
                     </div>
-<p class="text-body-md text-on-surface-variant text-center leading-relaxed">
-                        El cerebro detrás de la logística. Ivan se asegura de que cada bloque esté en su lugar mientras programa nuevas aventuras gatunas.
-                    </p>
+<p class="text-body-md text-on-surface-variant text-center leading-relaxed" data-i18n="about.member1.desc">The brain behind the logistics. Ivan makes sure every block is in place while coding new feline adventures.</p>
 </div>
 </div>
 <!-- Member 2: Ton -->
@@ -199,11 +214,9 @@
 </div>
 <h3 class="font-headline-lg text-headline-lg mb-1 text-primary text-center">Ton<br/>Llucià</h3>
 <div class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-label-bold font-label-bold self-center mb-4">
-                        Developer
+<span data-i18n="about.role.developer">Developer</span>
                     </div>
-<p class="text-body-md text-on-surface-variant text-center leading-relaxed">
-                        Maestro del código y experto en optimización. Si hay un bug, Ton lo encontrará y lo convertirá en una funcionalidad adorable.
-                    </p>
+<p class="text-body-md text-on-surface-variant text-center leading-relaxed" data-i18n="about.member2.desc">Code wizard and optimization expert. If there's a bug, Ton will find it and turn it into an adorable feature.</p>
 </div>
 </div>
 <!-- Member 3: Edu Sles -->
@@ -214,11 +227,9 @@
 </div>
 <h3 class="font-headline-lg text-headline-lg mb-1 text-primary text-center">Eduard<br/>Sales</h3>
 <div class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full text-label-bold font-label-bold self-center mb-4">
-                        Game Designer
+<span data-i18n="about.role.gameDesigner">Game Designer</span>
                     </div>
-<p class="text-body-md text-on-surface-variant text-center leading-relaxed">
-                        Arquitecto de sueños. Edu diseña mecánicas que te harán sentir como si estuvieras envuelto en una manta caliente un día de lluvia.
-                    </p>
+<p class="text-body-md text-on-surface-variant text-center leading-relaxed" data-i18n="about.member3.desc">Dream architect. Edu designs mechanics that feel like being wrapped in a warm blanket on a rainy day.</p>
 </div>
 </div>
 <!-- Member 4: Joan Arno -->
@@ -229,61 +240,174 @@
 </div>
 <h3 class="font-headline-lg text-headline-lg mb-1 text-primary text-center">Joan<br/>Arnó</h3>
 <div class="bg-tertiary-fixed-dim text-on-tertiary-fixed-variant px-3 py-1 rounded-full text-label-bold font-label-bold self-center mb-4">
-                        Artist
+<span data-i18n="about.role.artist">Artist</span>
                     </div>
-<p class="text-body-md text-on-surface-variant text-center leading-relaxed">
-                        El pincel mágico del equipo. Joan da vida a nuestros personajes con colores vibrantes y texturas que casi puedes acariciar.
-                    </p>
+<p class="text-body-md text-on-surface-variant text-center leading-relaxed" data-i18n="about.member4.desc">The team's magic brush. Joan brings our characters to life with vibrant colors and textures you can almost pet.</p>
 </div>
 </div>
 </div>
 </section>
-<!-- Studio Philosophy Section -->
-<section class="bg-secondary-fixed py-20 mt-12 relative">
-<div class="max-w-container-max mx-auto px-margin-mobile flex flex-col md:flex-row items-center gap-12">
-<div class="flex-1 space-y-6">
-<h2 class="font-headline-lg text-headline-lg text-primary">Nuestra Filosofía</h2>
-<div class="space-y-4">
-<div class="flex gap-4 items-start">
-<div class="bg-primary text-on-primary p-2 rounded-lg">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
-</div>
-<div>
-<h4 class="font-label-bold text-label-bold text-primary">Hecho con Amor</h4>
-<p class="text-body-md text-on-secondary-fixed-variant">Cada píxel es colocado con el cuidado de quien acaricia a un gato dormido.</p>
-</div>
-</div>
-<div class="flex gap-4 items-start">
-<div class="bg-primary text-on-primary p-2 rounded-lg">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">toys</span>
-</div>
-<div>
-<h4 class="font-label-bold text-label-bold text-primary">Jugabilidad Wholesome</h4>
-<p class="text-body-md text-on-secondary-fixed-variant">Priorizamos la paz mental y la alegría sobre el estrés competitivo.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="flex-1 w-full max-w-sm">
-<div class="bg-surface border-[4px] border-primary rounded-3xl p-4 block-shadow rotate-2">
-<img class="w-full h-64 object-cover rounded-2xl border-2 border-primary" data-alt="A cozy, sunlit game studio workspace with soft pastel colors, cute cat plushies on the desks, and large windows looking out onto a peaceful green garden. The lighting is warm and golden, creating a serene and inviting atmosphere that perfectly matches the studio's kawaii aesthetic." src="images/img_5b8da9068829aaa3.png"/>
-</div>
-</div>
-</div>
-</section>
+
 </main>
 <!-- Footer -->
 <footer class="bg-secondary-container dark:bg-inverse-surface w-full px-margin-mobile md:px-margin-desktop py-12 flex flex-col items-center gap-6 rounded-t-xl border-t-4 border-primary z-10 relative">
 <div class="font-headline-lg text-headline-lg text-primary flex items-center gap-2"><span class="material-symbols-outlined text-[32px]">pets</span> RoldoStudio</div>
 <div class="flex gap-6">
-<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
-<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
-<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" href="#">Support</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" data-i18n="footer.privacy" href="#">Privacy Policy</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" data-i18n="footer.terms" href="#">Terms of Service</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" data-i18n="footer.support" href="#">Support</a>
 </div>
-<p class="font-body-md text-body-md text-on-secondary-container dark:text-on-primary-fixed text-center max-w-md">            ) 2024 RoldoStudio. All rights reserved. Purr-fectly crafted for cozy gamers.
-        </p>
+<p class="font-body-md text-body-md text-on-secondary-container dark:text-on-primary-fixed text-center max-w-md" data-i18n="footer.copyright">© 2024 RoldoStudio. All rights reserved. Purr-fectly crafted for cozy gamers.</p>
 </footer>
 <script>
+        (() => {
+            const supported = ['en', 'es', 'ca'];
+            const storageKey = 'lang';
+            const select = document.getElementById('lang-select');
+            const pageTitleKey = 'about.meta.title';
+            const fallback = {
+                en: {
+                    _lang: 'en',
+                    'nav.games': 'Games',
+                    'nav.about': 'About',
+                    'nav.contact': 'Contact',
+                    'nav.playNow': 'Play Now',
+                    'footer.privacy': 'Privacy Policy',
+                    'footer.terms': 'Terms of Service',
+                    'footer.support': 'Support',
+                    'footer.copyright': '© 2024 RoldoStudio. All rights reserved. Purr-fectly crafted for cozy gamers.',
+                    'about.meta.title': 'About Us - RoldoStudio',
+                    'about.hero.title': 'Meet the Team',
+                    'about.hero.desc': "We're a small group of cat and videogame enthusiasts, dedicated to creating the coziest, most purr-fect digital experiences.",
+                    'about.role.producer': 'Producer',
+                    'about.role.developer': 'Developer',
+                    'about.role.gameDesigner': 'Game Designer',
+                    'about.role.artist': 'Artist',
+                    'about.member1.desc': 'The brain behind the logistics. Ivan makes sure every block is in place while coding new feline adventures.',
+                    'about.member2.desc': "Code wizard and optimization expert. If there's a bug, Ton will find it and turn it into an adorable feature.",
+                    'about.member3.desc': 'Dream architect. Edu designs mechanics that feel like being wrapped in a warm blanket on a rainy day.',
+                    'about.member4.desc': "The team's magic brush. Joan brings our characters to life with vibrant colors and textures you can almost pet.",
+                    'about.philosophy.heading': 'Our Philosophy',
+                    'about.philosophy.love.title': 'Made with Love',
+                    'about.philosophy.love.desc': 'Every pixel is placed with the care of petting a sleeping cat.',
+                    'about.philosophy.wholesome.title': 'Wholesome Gameplay',
+                    'about.philosophy.wholesome.desc': 'We prioritize peace of mind and joy over competitive stress.'
+                },
+                es: {
+                    _lang: 'es',
+                    'nav.games': 'Juegos',
+                    'nav.about': 'Sobre nosotros',
+                    'nav.contact': 'Contacto',
+                    'nav.playNow': 'Jugar ahora',
+                    'footer.privacy': 'Política de privacidad',
+                    'footer.terms': 'Términos del servicio',
+                    'footer.support': 'Soporte',
+                    'footer.copyright': '© 2024 RoldoStudio. Todos los derechos reservados. Hecho con cariño para gamers cozy.',
+                    'about.meta.title': 'Sobre nosotros - RoldoStudio',
+                    'about.hero.title': 'Conoce al equipo',
+                    'about.hero.desc': 'Somos un pequeño grupo de entusiastas de los gatos y los videojuegos, dedicados a crear las experiencias más acogedoras y purr-fectas del mundo digital.',
+                    'about.role.producer': 'Productor',
+                    'about.role.developer': 'Desarrollador',
+                    'about.role.gameDesigner': 'Diseñador de juego',
+                    'about.role.artist': 'Artista',
+                    'about.member1.desc': 'El cerebro detrás de la logística. Ivan se asegura de que cada bloque esté en su lugar mientras programa nuevas aventuras gatunas.',
+                    'about.member2.desc': 'Maestro del código y experto en optimización. Si hay un bug, Ton lo encontrará y lo convertirá en una funcionalidad adorable.',
+                    'about.member3.desc': 'Arquitecto de sueños. Edu diseña mecánicas que te harán sentir como si estuvieras envuelto en una manta caliente un día de lluvia.',
+                    'about.member4.desc': 'El pincel mágico del equipo. Joan da vida a nuestros personajes con colores vibrantes y texturas que casi puedes acariciar.',
+                    'about.philosophy.heading': 'Nuestra filosofía',
+                    'about.philosophy.love.title': 'Hecho con amor',
+                    'about.philosophy.love.desc': 'Cada píxel es colocado con el cuidado de quien acaricia a un gato dormido.',
+                    'about.philosophy.wholesome.title': 'Jugabilidad wholesome',
+                    'about.philosophy.wholesome.desc': 'Priorizamos la paz mental y la alegría sobre el estrés competitivo.'
+                },
+                ca: {
+                    _lang: 'ca',
+                    'nav.games': 'Jocs',
+                    'nav.about': 'Sobre nosaltres',
+                    'nav.contact': 'Contacte',
+                    'nav.playNow': 'Juga ara',
+                    'footer.privacy': 'Política de privacitat',
+                    'footer.terms': 'Termes del servei',
+                    'footer.support': 'Suport',
+                    'footer.copyright': '© 2024 RoldoStudio. Tots els drets reservats. Fet amb estima per a gamers cozy.',
+                    'about.meta.title': 'Sobre nosaltres - RoldoStudio',
+                    'about.hero.title': 'Coneix l’equip',
+                    'about.hero.desc': 'Som un petit grup d’entusiastes dels gats i els videojocs, dedicats a crear les experiències digitals més acollidores i purr-fectes.',
+                    'about.role.producer': 'Productor',
+                    'about.role.developer': 'Desenvolupador',
+                    'about.role.gameDesigner': 'Dissenyador de joc',
+                    'about.role.artist': 'Artista',
+                    'about.member1.desc': 'El cervell darrere la logística. L’Ivan s’assegura que cada bloc sigui al seu lloc mentre programa noves aventures felines.',
+                    'about.member2.desc': 'Mestre del codi i expert en optimització. Si hi ha un bug, en Ton el trobarà i el convertirà en una funcionalitat adorable.',
+                    'about.member3.desc': 'Arquitecte de somnis. L’Edu dissenya mecàniques que et faran sentir com si estiguessis embolicat amb una manta calenta en un dia de pluja.',
+                    'about.member4.desc': 'El pinzell màgic de l’equip. En Joan dona vida als nostres personatges amb colors vibrants i textures que gairebé pots acariciar.',
+                    'about.philosophy.heading': 'La nostra filosofia',
+                    'about.philosophy.love.title': 'Fet amb amor',
+                    'about.philosophy.love.desc': 'Cada píxel es col·loca amb la cura de qui acaricia un gat adormit.',
+                    'about.philosophy.wholesome.title': 'Jugabilitat wholesome',
+                    'about.philosophy.wholesome.desc': 'Prioritzem la pau mental i l’alegria per sobre de l’estrès competitiu.'
+                }
+            };
 
+            const getLang = () => {
+                const v = localStorage.getItem(storageKey);
+                return supported.includes(v) ? v : 'en';
+            };
+
+            const apply = (dict, lang) => {
+                const t = (key) => (key in dict ? dict[key] : '');
+                document.documentElement.lang = dict._lang || lang;
+
+                const title = t(pageTitleKey);
+                if (title) document.title = title;
+
+                document.querySelectorAll('[data-i18n]').forEach((el) => {
+                    const key = el.getAttribute('data-i18n');
+                    const val = t(key);
+                    if (val) el.textContent = val;
+                });
+
+                document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+                    const key = el.getAttribute('data-i18n-placeholder');
+                    const val = t(key);
+                    if (val) el.setAttribute('placeholder', val);
+                });
+
+                document.querySelectorAll('[data-i18n-value]').forEach((el) => {
+                    const key = el.getAttribute('data-i18n-value');
+                    const val = t(key);
+                    if (val) el.value = val;
+                });
+
+                window.__i18n = {
+                    lang,
+                    dict,
+                    t: (key) => (key in dict ? dict[key] : key),
+                };
+            };
+
+            const load = async (lang) => {
+                try {
+                    const res = await fetch(`i18n/${lang}.json`, { cache: 'no-store' });
+                    if (!res.ok) throw new Error('fetch_failed');
+                    const dict = await res.json();
+                    apply(dict, lang);
+                } catch (_) {
+                    if (fallback[lang]) apply(fallback[lang], lang);
+                }
+            };
+
+            const lang = getLang();
+            if (select) {
+                select.value = lang;
+                select.addEventListener('change', () => {
+                    const next = select.value;
+                    localStorage.setItem(storageKey, next);
+                    load(next);
+                });
+            }
+
+            load(lang);
+        })();
     </script>
 </body></html>

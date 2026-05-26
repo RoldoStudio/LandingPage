@@ -1,4 +1,4 @@
-<!DOCTYPE html><html class="light" lang="es"><head>
+<!DOCTYPE html><html class="light" lang="en"><head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Roldo Studios</title>
@@ -144,6 +144,16 @@
             position: relative;
             padding-top: 16px; /* space for ears */
         }
+        #lang-select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: transparent;
+            border: 0;
+            outline: none;
+            box-shadow: none;
+        }
+        #lang-select::-ms-expand { display: none; }
     </style>
 </head>
 <body class="bg-surface text-on-surface font-body-md overflow-x-hidden min-h-screen flex flex-col">
@@ -152,42 +162,51 @@
 <div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
 <div class="text-headline-lg font-headline-lg font-black text-primary dark:text-primary-fixed-dim">RoldoStudio</div>
 <div class="hidden md:flex gap-8 items-center">
-<a class="text-primary font-bold border-b-2 border-primary pb-1 hover:bg-surface-container-high transition-transform hover:scale-95" href="#">Games</a>
-<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:bg-surface-container-high transition-transform hover:scale-95" href="about_us.html">About</a>
-<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:bg-surface-container-high transition-transform hover:scale-95" href="contact.html">Contact</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 hover:bg-surface-container-high transition-transform hover:scale-95" data-i18n="nav.games" href="#">Games</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:bg-surface-container-high transition-transform hover:scale-95" data-i18n="nav.about" href="about_us.html">About</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:bg-surface-container-high transition-transform hover:scale-95" data-i18n="nav.contact" href="contact.html">Contact</a>
+</div>
+<div class="flex items-center gap-3">
+<div class="relative flex items-center gap-1 bg-surface-container-lowest border-2 border-primary rounded-full px-2 py-1 shadow-[3px_3px_0px_0px_rgba(66,54,43,1)]">
+<span class="material-symbols-outlined text-primary text-[18px]">language</span>
+<select aria-label="Language" class="appearance-none bg-transparent border-0 text-primary font-label-bold text-[12px] leading-none tracking-widest pr-6 focus:outline-none focus:ring-0" id="lang-select">
+<option value="en">EN</option>
+<option value="es">ES</option>
+<option value="ca">CAT</option>
+</select>
+<span class="material-symbols-outlined text-primary text-[18px] absolute right-2 pointer-events-none">expand_more</span>
 </div>
 <button class="kawaii-button bg-tertiary-fixed text-primary font-label-bold text-label-bold px-6 py-2 rounded-full border-3 border-primary shadow-[4px_4px_0px_0px_rgba(66,54,43,1)] flex items-center gap-2">
-                Play Now
-            </button>
+<span data-i18n="nav.playNow">Play Now</span>
+</button>
+</div>
 </div>
 </nav>
 <main class="flex-grow bg-paw-pattern relative z-0">
 <section class="w-full px-margin-mobile md:px-margin-desktop py-12 max-w-container-max mx-auto text-center"><div class="bg-surface-container-low border-4 border-primary p-8 md:p-12 rounded-[2rem] shadow-[8px_8px_0px_0px_rgba(66,54,43,1)] relative overflow-hidden">
     <div class="relative z-10">
         <div class="flex flex-col items-center mb-10">
-            <h2 class="font-headline-lg text-primary">Acerca de RoldoStudio</h2>
+            <h2 class="font-headline-lg text-primary" data-i18n="index.about.heading">About RoldoStudio</h2>
             <div class="h-1 w-24 bg-primary rounded-full mt-2"></div>
         </div>
         
-        <p class="font-body-lg text-on-surface-variant max-w-3xl mx-auto leading-relaxed mb-12 text-center">
-            RoldoStudio es la fuerza creativa e independiente detrás de PurringBlocks. Somos un pequeño equipo apasionado dedicado a crear juegos móviles acogedores y de alta calidad.
-        </p>
+        <p class="font-body-lg text-on-surface-variant max-w-3xl mx-auto leading-relaxed mb-12 text-center" data-i18n="index.about.desc">RoldoStudio is the independent creative force behind PurringBlocks. We're a small, passionate team dedicated to making cozy, high-quality mobile games.</p>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="bg-surface p-6 rounded-2xl border-2 border-primary shadow-[4px_4px_0px_0px_rgba(66,54,43,1)] flex flex-col items-center transition-transform hover:-translate-y-1">
                 <span class="material-symbols-outlined text-primary text-4xl mb-3">pets</span>
-                <h3 class="font-label-bold text-primary mb-2 uppercase tracking-wider">Pasión Felina</h3>
-                <p class="font-body-md text-on-surface-variant text-center">Diseñado especialmente para los amantes de los gatos en cada detalle.</p>
+                <h3 class="font-label-bold text-primary mb-2 uppercase tracking-wider" data-i18n="index.about.card1.title">Feline Passion</h3>
+                <p class="font-body-md text-on-surface-variant text-center" data-i18n="index.about.card1.desc">Designed for cat lovers in every detail.</p>
             </div>
             <div class="bg-surface p-6 rounded-2xl border-2 border-primary shadow-[4px_4px_0px_0px_rgba(66,54,43,1)] flex flex-col items-center transition-transform hover:-translate-y-1">
                 <span class="material-symbols-outlined text-primary text-4xl mb-3">auto_awesome</span>
-                <h3 class="font-label-bold text-primary mb-2 uppercase tracking-wider">Calidad Indie</h3>
-                <p class="font-body-md text-on-surface-variant text-center">Cuidado artesanal y atención al detalle en cada píxel que creamos.</p>
+                <h3 class="font-label-bold text-primary mb-2 uppercase tracking-wider" data-i18n="index.about.card2.title">Indie Quality</h3>
+                <p class="font-body-md text-on-surface-variant text-center" data-i18n="index.about.card2.desc">Handcrafted care and attention in every pixel we create.</p>
             </div>
             <div class="bg-surface p-6 rounded-2xl border-2 border-primary shadow-[4px_4px_0px_0px_rgba(66,54,43,1)] flex flex-col items-center transition-transform hover:-translate-y-1">
                 <span class="material-symbols-outlined text-primary text-4xl mb-3">magic_button</span>
-                <h3 class="font-label-bold text-primary mb-2 uppercase tracking-wider">Magia Cotidiana</h3>
-                <p class="font-body-md text-on-surface-variant text-center">Brindamos paz, alegría y un toque de magia a tu vida diaria.</p>
+                <h3 class="font-label-bold text-primary mb-2 uppercase tracking-wider" data-i18n="index.about.card3.title">Everyday Magic</h3>
+                <p class="font-body-md text-on-surface-variant text-center" data-i18n="index.about.card3.desc">We bring peace, joy, and a touch of magic to your everyday life.</p>
             </div>
         </div>
     </div>
@@ -208,7 +227,7 @@
 <img alt="" class="w-2/3 md:w-1/2 max-w-[400px] drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)] mb-8 transform -rotate-2 hover:rotate-2 transition-transform duration-300" src="images/img_dcf39670772df9cb.png">
 <button class="kawaii-button bg-tertiary-fixed-dim text-primary font-headline-lg-mobile md:font-headline-lg px-10 py-4 rounded-full border-[4px] border-primary shadow-[6px_6px_0px_0px_rgba(66,54,43,1)] flex items-center gap-3">
 <span class="material-symbols-outlined" style="font-size: 32px;">play_arrow</span>
-                            ¡Jugar Ahora!
+<span data-i18n="index.hero.cta">Play Now!</span>
                         </button>
 </div>
 </div>
@@ -225,11 +244,9 @@
 </div>
 <div class="max-w-container-max mx-auto flex flex-col items-center text-center gap-6">
 <div class="inline-block bg-secondary-container px-6 py-2 rounded-full border-3 border-primary shadow-[3px_3px_0px_0px_rgba(66,54,43,1)] mb-4">
-<h2 class="font-headline-lg-mobile md:font-headline-lg text-primary">Juegos Perfectamente Creados</h2>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-primary" data-i18n="index.banner.heading">Perfectly Crafted Games</h2>
 </div>
-<p class="font-body-lg text-on-surface-variant max-w-2xl">
-                    En PurringBlocks Studio, vertemos nuestro amor por los gatos y el diseño acogedor en cada píxel. Creemos que los juegos móviles deben ser un cálido abrazo, una taza de té y un suave ronroneo en tu bolsillo.
-                </p>
+<p class="font-body-lg text-on-surface-variant max-w-2xl" data-i18n="index.banner.desc">At Roldo Studios, we pour our love for video games and cozy design into every pixel. We believe mobile games should feel like a warm hug, a cup of tea, and a gentle purr in your pocket.</p>
 <div class="flex gap-4 mt-6">
 <span class="bg-primary-fixed text-primary font-label-bold px-4 py-1.5 rounded-full border-2 border-primary">#CozyGames</span>
 <span class="bg-tertiary-fixed text-primary font-label-bold px-4 py-1.5 rounded-full border-2 border-primary">#Kawaii</span>
@@ -239,9 +256,7 @@
 </section>
 <!-- Featured Game Section -->
 <section class="w-full px-margin-mobile md:px-margin-desktop py-20 max-w-container-max mx-auto">
-<h3 class="font-headline-xl text-primary text-center mb-16 drop-shadow-[2px_2px_0px_rgba(214,195,180,1)]">
-                Nuestro Juego Destacado
-            </h3>
+<h3 class="font-headline-xl text-primary text-center mb-16 drop-shadow-[2px_2px_0px_rgba(214,195,180,1)]" data-i18n="index.featured.heading">Our Featured Game</h3>
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 <!-- Visuals Bento Grid -->
 <div class="grid grid-cols-2 gap-4 h-full">
@@ -265,32 +280,30 @@
 <!-- Background decor -->
 <span class="material-symbols-outlined absolute -bottom-10 -right-10 text-[120px] text-primary-fixed opacity-50 transform rotate-[-20deg]">pets</span>
 <h4 class="font-headline-lg-mobile text-primary">Purring Blocks</h4>
-<p class="font-body-lg text-on-surface-variant">
-                        Descubre una experiencia de rompecabezas relajante donde lindos bloques con forma de gato encajan perfectamente. ¡Supera niveles, colecciona adorables compañeros felinos y disfruta de la relajante estética kawaii!
-                    </p>
+<p class="font-body-lg text-on-surface-variant" data-i18n="index.game.desc">Discover a relaxing puzzle experience where cute cat-shaped blocks fit perfectly. Beat levels, collect adorable feline companions, and enjoy a calming kawaii aesthetic!</p>
 <ul class="space-y-3 font-body-md text-on-surface">
 <li class="flex items-center gap-3">
 <span class="material-symbols-outlined text-primary" data-weight="fill">star</span>
-<span class="">Mecánicas de puzzle intuitivas y relajantes</span>
+<span class="" data-i18n="index.game.feature1">Intuitive, relaxing puzzle mechanics</span>
 </li>
 <li class="flex items-center gap-3">
 <span class="material-symbols-outlined text-primary" data-weight="fill">favorite</span>
-<span class="">Cientos de niveles con arte encantador</span>
+<span class="" data-i18n="index.game.feature2">Hundreds of levels with charming art</span>
 </li>
 <li class="flex items-center gap-3">
 <span class="material-symbols-outlined text-primary" data-weight="fill">music_note</span>
-<span class="">Banda sonora lofi para calmar tu mente</span>
+<span class="" data-i18n="index.game.feature3">Lofi soundtrack to calm your mind</span>
 </li>
 </ul>
 <!-- App Badges Placeholder -->
 <div class="flex flex-wrap gap-4 mt-4">
 <button class="kawaii-button bg-inverse-surface text-surface font-label-bold px-6 py-3 rounded-xl border-3 border-primary shadow-[4px_4px_0px_0px_rgba(66,54,43,1)] flex items-center gap-2">
 <span class="material-symbols-outlined">adb</span>
-                            Google Play
+<span data-i18n="index.badge.googlePlay">Google Play</span>
                         </button>
 <button class="kawaii-button bg-inverse-surface text-surface font-label-bold px-6 py-3 rounded-xl border-3 border-primary shadow-[4px_4px_0px_0px_rgba(66,54,43,1)] flex items-center gap-2">
 <span class="material-symbols-outlined">phone_iphone</span>
-                            App Store
+<span data-i18n="index.badge.appStore">App Store</span>
                         </button>
 </div>
 </div>
@@ -301,13 +314,172 @@
 <footer class="bg-secondary-container dark:bg-inverse-surface w-full px-margin-mobile md:px-margin-desktop py-12 flex flex-col items-center gap-6 rounded-t-xl border-t-4 border-primary z-10 relative">
 <div class="font-headline-lg text-headline-lg text-primary flex items-center gap-2"><span class="material-symbols-outlined text-[32px]">pets</span> RoldoStudio</div>
 <div class="flex gap-6">
-<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
-<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
-<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" href="#">Support</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" data-i18n="footer.privacy" href="#">Privacy Policy</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" data-i18n="footer.terms" href="#">Terms of Service</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" data-i18n="footer.support" href="#">Support</a>
 </div>
-<p class="font-body-md text-body-md text-on-secondary-container dark:text-on-primary-fixed text-center max-w-md">            ) 2024 RoldoStudio. All rights reserved. Purr-fectly crafted for cozy gamers.
-        </p>
+<p class="font-body-md text-body-md text-on-secondary-container dark:text-on-primary-fixed text-center max-w-md" data-i18n="footer.copyright">© 2024 RoldoStudio. All rights reserved. Purr-fectly crafted for cozy gamers.</p>
 </footer>
 
 
+<script>
+        (() => {
+            const supported = ['en', 'es', 'ca'];
+            const storageKey = 'lang';
+            const select = document.getElementById('lang-select');
+            const pageTitleKey = 'index.meta.title';
+            const fallback = {
+                en: {
+                    _lang: 'en',
+                    'nav.games': 'Games',
+                    'nav.about': 'About',
+                    'nav.contact': 'Contact',
+                    'nav.playNow': 'Play Now',
+                    'footer.privacy': 'Privacy Policy',
+                    'footer.terms': 'Terms of Service',
+                    'footer.support': 'Support',
+                    'footer.copyright': '© 2024 RoldoStudio. All rights reserved. Purr-fectly crafted for cozy gamers.',
+                    'index.meta.title': 'PurringBlocks Studio',
+                    'index.about.heading': 'About RoldoStudio',
+                    'index.about.desc': "RoldoStudio is the independent creative force behind PurringBlocks. We're a small, passionate team dedicated to making cozy, high-quality mobile games.",
+                    'index.about.card1.title': 'Feline Passion',
+                    'index.about.card1.desc': 'Designed for cat lovers in every detail.',
+                    'index.about.card2.title': 'Indie Quality',
+                    'index.about.card2.desc': 'Handcrafted care and attention in every pixel we create.',
+                    'index.about.card3.title': 'Everyday Magic',
+                    'index.about.card3.desc': 'We bring peace, joy, and a touch of magic to your everyday life.',
+                    'index.hero.cta': 'Play Now!',
+                    'index.banner.heading': 'Perfectly Crafted Games',
+                    'index.banner.desc': 'At Roldo Studios, we pour our love for video games and cozy design into every pixel. We believe mobile games should feel like a warm hug, a cup of tea, and a gentle purr in your pocket.',
+                    'index.featured.heading': 'Our Featured Game',
+                    'index.game.desc': 'Discover a relaxing puzzle experience where cute cat-shaped blocks fit perfectly. Beat levels, collect adorable feline companions, and enjoy a calming kawaii aesthetic!',
+                    'index.game.feature1': 'Intuitive, relaxing puzzle mechanics',
+                    'index.game.feature2': 'Hundreds of levels with charming art',
+                    'index.game.feature3': 'Lofi soundtrack to calm your mind',
+                    'index.badge.googlePlay': 'Google Play',
+                    'index.badge.appStore': 'App Store'
+                },
+                es: {
+                    _lang: 'es',
+                    'nav.games': 'Juegos',
+                    'nav.about': 'Sobre nosotros',
+                    'nav.contact': 'Contacto',
+                    'nav.playNow': 'Jugar ahora',
+                    'footer.privacy': 'Política de privacidad',
+                    'footer.terms': 'Términos del servicio',
+                    'footer.support': 'Soporte',
+                    'footer.copyright': '© 2024 RoldoStudio. Todos los derechos reservados. Hecho con cariño para gamers cozy.',
+                    'index.meta.title': 'PurringBlocks Studio',
+                    'index.about.heading': 'Acerca de RoldoStudio',
+                    'index.about.desc': 'RoldoStudio es la fuerza creativa e independiente detrás de PurringBlocks. Somos un pequeño equipo apasionado dedicado a crear juegos móviles acogedores y de alta calidad.',
+                    'index.about.card1.title': 'Pasión felina',
+                    'index.about.card1.desc': 'Diseñado especialmente para los amantes de los gatos en cada detalle.',
+                    'index.about.card2.title': 'Calidad indie',
+                    'index.about.card2.desc': 'Cuidado artesanal y atención al detalle en cada píxel que creamos.',
+                    'index.about.card3.title': 'Magia cotidiana',
+                    'index.about.card3.desc': 'Brindamos paz, alegría y un toque de magia a tu vida diaria.',
+                    'index.hero.cta': '¡Jugar ahora!',
+                    'index.banner.heading': 'Juegos perfectamente creados',
+                    'index.banner.desc': 'En Roldo Studios, vertemos nuestro amor por los videojuegos y el diseño acogedor en cada píxel. Creemos que los juegos móviles deben ser un cálido abrazo, una taza de té y un suave ronroneo en tu bolsillo.',
+                    'index.featured.heading': 'Nuestro juego destacado',
+                    'index.game.desc': 'Descubre una experiencia de rompecabezas relajante donde lindos bloques con forma de gato encajan perfectamente. ¡Supera niveles, colecciona adorables compañeros felinos y disfruta de la relajante estética kawaii!',
+                    'index.game.feature1': 'Mecánicas de puzzle intuitivas y relajantes',
+                    'index.game.feature2': 'Cientos de niveles con arte encantador',
+                    'index.game.feature3': 'Banda sonora lofi para calmar tu mente',
+                    'index.badge.googlePlay': 'Google Play',
+                    'index.badge.appStore': 'App Store'
+                },
+                ca: {
+                    _lang: 'ca',
+                    'nav.games': 'Jocs',
+                    'nav.about': 'Sobre nosaltres',
+                    'nav.contact': 'Contacte',
+                    'nav.playNow': 'Juga ara',
+                    'footer.privacy': 'Política de privacitat',
+                    'footer.terms': 'Termes del servei',
+                    'footer.support': 'Suport',
+                    'footer.copyright': '© 2024 RoldoStudio. Tots els drets reservats. Fet amb estima per a gamers cozy.',
+                    'index.meta.title': 'PurringBlocks Studio',
+                    'index.about.heading': 'Sobre RoldoStudio',
+                    'index.about.desc': 'RoldoStudio és la força creativa independent darrere de PurringBlocks. Som un petit equip apassionat dedicat a crear jocs mòbils acollidors i d’alta qualitat.',
+                    'index.about.card1.title': 'Passió felina',
+                    'index.about.card1.desc': 'Dissenyat especialment per als amants dels gats en cada detall.',
+                    'index.about.card2.title': 'Qualitat indie',
+                    'index.about.card2.desc': 'Cura artesanal i atenció al detall en cada píxel que creem.',
+                    'index.about.card3.title': 'Màgia quotidiana',
+                    'index.about.card3.desc': 'Aportem pau, alegria i un toc de màgia al teu dia a dia.',
+                    'index.hero.cta': 'Juga ara!',
+                    'index.banner.heading': 'Jocs perfectament creats',
+                    'index.banner.desc': 'A Roldo Studios, hi aboquem el nostre amor pels videojocs i el disseny acollidor a cada píxel. Creiem que els jocs mòbils han de ser una abraçada càlida, una tassa de te i un suau ronc a la butxaca.',
+                    'index.featured.heading': 'El nostre joc destacat',
+                    'index.game.desc': 'Descobreix una experiència de trencaclosques relaxant on uns blocs amb forma de gat encaixen perfectament. Supera nivells, col·lecciona companys felins adorables i gaudeix d’una estètica kawaii relaxant!',
+                    'index.game.feature1': 'Mecàniques de puzle intuïtives i relaxants',
+                    'index.game.feature2': 'Centenars de nivells amb art encantador',
+                    'index.game.feature3': 'Banda sonora lofi per calmar la ment',
+                    'index.badge.googlePlay': 'Google Play',
+                    'index.badge.appStore': 'App Store'
+                }
+            };
+
+            const getLang = () => {
+                const v = localStorage.getItem(storageKey);
+                return supported.includes(v) ? v : 'en';
+            };
+
+            const apply = (dict, lang) => {
+                const t = (key) => (key in dict ? dict[key] : '');
+                document.documentElement.lang = dict._lang || lang;
+
+                const title = t(pageTitleKey);
+                if (title) document.title = title;
+
+                document.querySelectorAll('[data-i18n]').forEach((el) => {
+                    const key = el.getAttribute('data-i18n');
+                    const val = t(key);
+                    if (val) el.textContent = val;
+                });
+
+                document.querySelectorAll('[data-i18n-placeholder]').forEach((el) => {
+                    const key = el.getAttribute('data-i18n-placeholder');
+                    const val = t(key);
+                    if (val) el.setAttribute('placeholder', val);
+                });
+
+                document.querySelectorAll('[data-i18n-value]').forEach((el) => {
+                    const key = el.getAttribute('data-i18n-value');
+                    const val = t(key);
+                    if (val) el.value = val;
+                });
+
+                window.__i18n = {
+                    lang,
+                    dict,
+                    t: (key) => (key in dict ? dict[key] : key),
+                };
+            };
+
+            const load = async (lang) => {
+                try {
+                    const res = await fetch(`i18n/${lang}.json`, { cache: 'no-store' });
+                    if (!res.ok) throw new Error('fetch_failed');
+                    const dict = await res.json();
+                    apply(dict, lang);
+                } catch (_) {
+                    if (fallback[lang]) apply(fallback[lang], lang);
+                }
+            };
+
+            const lang = getLang();
+            if (select) {
+                select.value = lang;
+                select.addEventListener('change', () => {
+                    const next = select.value;
+                    localStorage.setItem(storageKey, next);
+                    load(next);
+                });
+            }
+
+            load(lang);
+        })();
+    </script>
 </body></html>
