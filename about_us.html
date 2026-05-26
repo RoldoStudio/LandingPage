@@ -136,7 +136,7 @@
         .hover-squish:hover {
             transform: scale(0.98);
         }
-        #lang-select {
+        .lang-select {
             -webkit-appearance: none;
             -moz-appearance: none;
             appearance: none;
@@ -145,7 +145,7 @@
             outline: none;
             box-shadow: none;
         }
-        #lang-select::-ms-expand { display: none; }
+        .lang-select::-ms-expand { display: none; }
     </style>
 </head>
 <body class="bg-surface text-on-surface font-body-md overflow-x-hidden min-h-screen flex flex-col">
@@ -158,10 +158,10 @@
 <a class="text-primary font-bold border-b-2 border-primary pb-1 hover:bg-surface-container-high transition-transform hover:scale-95" data-i18n="nav.about" href="about_us.html">About</a>
 <a class="text-on-surface-variant dark:text-surface-variant font-medium hover:bg-surface-container-high transition-transform hover:scale-95" data-i18n="nav.contact" href="contact.html">Contact</a>
 </div>
-<div class="flex items-center gap-3">
+<div class="hidden md:flex items-center gap-3">
 <div class="relative flex items-center gap-1 bg-surface-container-lowest border-2 border-primary rounded-full px-2 py-1 shadow-[3px_3px_0px_0px_rgba(66,54,43,1)]">
 <span class="material-symbols-outlined text-primary text-[18px]">language</span>
-<select aria-label="Language" class="appearance-none bg-transparent border-0 text-primary font-label-bold text-[12px] leading-none tracking-widest pr-6 focus:outline-none focus:ring-0" id="lang-select">
+<select aria-label="Language" class="lang-select appearance-none bg-transparent border-0 text-primary font-label-bold text-[12px] leading-none tracking-widest pr-6 focus:outline-none focus:ring-0" data-lang-select>
 <option value="en">EN</option>
 <option value="es">ES</option>
 <option value="ca">CAT</option>
@@ -171,6 +171,30 @@
 <button class="kawaii-button bg-tertiary-fixed text-primary font-label-bold text-label-bold px-6 py-2 rounded-full border-3 border-primary shadow-[4px_4px_0px_0px_rgba(66,54,43,1)] flex items-center gap-2">
 <span data-i18n="nav.playNow">Play Now</span>
 </button>
+</div>
+<button aria-controls="mobile-nav" aria-expanded="false" class="md:hidden w-11 h-11 rounded-full border-2 border-primary shadow-[3px_3px_0px_0px_rgba(66,54,43,1)] flex items-center justify-center bg-surface-container-lowest text-primary active:scale-95 transition-transform" id="nav-toggle" type="button">
+<span class="material-symbols-outlined text-[26px]" id="nav-toggle-icon">menu</span>
+</button>
+</div>
+<div class="md:hidden hidden w-full px-margin-mobile pb-4 max-w-container-max mx-auto" id="mobile-nav">
+<div class="bg-surface-container-lowest border-2 border-primary rounded-2xl shadow-[4px_4px_0px_0px_rgba(66,54,43,1)] p-4 flex flex-col gap-4">
+<a class="text-on-surface-variant font-medium w-fit" data-i18n="nav.games" href="index.html">Games</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 w-fit" data-i18n="nav.about" href="about_us.html">About</a>
+<a class="text-on-surface-variant font-medium w-fit" data-i18n="nav.contact" href="contact.html">Contact</a>
+<div class="flex items-center gap-2 pt-1">
+<div class="relative flex items-center gap-1 bg-surface border-2 border-primary rounded-full px-2 py-1 shadow-[3px_3px_0px_0px_rgba(66,54,43,1)]">
+<span class="material-symbols-outlined text-primary text-[18px]">language</span>
+<select aria-label="Language" class="lang-select appearance-none bg-transparent border-0 text-primary font-label-bold text-[12px] leading-none tracking-widest pr-6 focus:outline-none focus:ring-0" data-lang-select>
+<option value="en">EN</option>
+<option value="es">ES</option>
+<option value="ca">CAT</option>
+</select>
+<span class="material-symbols-outlined text-primary text-[18px] absolute right-2 pointer-events-none">expand_more</span>
+</div>
+<button class="kawaii-button bg-tertiary-fixed text-primary font-label-bold text-label-bold px-5 py-2 rounded-full border-3 border-primary shadow-[4px_4px_0px_0px_rgba(66,54,43,1)] flex items-center gap-2">
+<span data-i18n="nav.playNow">Play Now</span>
+</button>
+</div>
 </div>
 </div>
 </nav>
@@ -263,7 +287,7 @@
         (() => {
             const supported = ['en', 'es', 'ca'];
             const storageKey = 'lang';
-            const select = document.getElementById('lang-select');
+            const selects = Array.from(document.querySelectorAll('[data-lang-select]'));
             const pageTitleKey = 'about.meta.title';
             const fallback = {
                 en: {
@@ -397,15 +421,37 @@
                 }
             };
 
+            const toggleBtn = document.getElementById('nav-toggle');
+            const toggleIcon = document.getElementById('nav-toggle-icon');
+            const mobileNav = document.getElementById('mobile-nav');
+            const setMobileOpen = (open) => {
+                if (!mobileNav || !toggleBtn || !toggleIcon) return;
+                mobileNav.classList.toggle('hidden', !open);
+                toggleBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+                toggleIcon.textContent = open ? 'close' : 'menu';
+            };
+
+            if (toggleBtn && mobileNav) {
+                toggleBtn.addEventListener('click', () => setMobileOpen(mobileNav.classList.contains('hidden')));
+                mobileNav.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMobileOpen(false)));
+            }
+
+            const setAllSelects = (lang) => {
+                selects.forEach((s) => {
+                    if (s.value !== lang) s.value = lang;
+                });
+            };
+
             const lang = getLang();
-            if (select) {
-                select.value = lang;
-                select.addEventListener('change', () => {
-                    const next = select.value;
+            setAllSelects(lang);
+            selects.forEach((s) => {
+                s.addEventListener('change', () => {
+                    const next = s.value;
                     localStorage.setItem(storageKey, next);
+                    setAllSelects(next);
                     load(next);
                 });
-            }
+            });
 
             load(lang);
         })();
