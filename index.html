@@ -339,6 +339,34 @@
 </div>
 </div>
 </section>
+<section class="w-full px-margin-mobile md:px-margin-desktop pb-20 max-w-container-max mx-auto">
+<div class="bg-surface border-4 border-primary rounded-[2rem] p-8 md:p-10 shadow-[8px_8px_0px_0px_rgba(66,54,43,1)] relative overflow-hidden">
+<span class="material-symbols-outlined absolute -top-10 -right-10 text-[120px] text-primary-fixed opacity-40 transform rotate-[18deg] select-none">favorite</span>
+<div class="relative z-10 max-w-2xl">
+<h3 class="font-headline-lg text-primary mb-2" data-i18n="index.wishlist.heading">Wishlist Updates</h3>
+<p class="text-body-lg text-on-surface-variant mb-6" data-i18n="index.wishlist.desc">Leave your email and we'll notify you when Purring Blocks is available to wishlist.</p>
+<div class="hidden bg-secondary-container border-2 border-primary rounded-xl p-4 mb-5 text-on-secondary-container" id="wishlist-success" role="status"></div>
+<form action="https://formsubmit.co/info@roldostudios.com" class="space-y-4" id="wishlist-form" method="POST">
+<input data-i18n-value="index.wishlist.subject" name="_subject" type="hidden" value="Wishlist request - Purring Blocks">
+<input name="_template" type="hidden" value="table">
+<input name="_honey" style="display:none" type="text">
+<input name="_captcha" type="hidden" value="false">
+<input id="wishlist-date" name="date" type="hidden" value="">
+<div class="space-y-2">
+<label class="font-label-bold text-label-bold text-primary" data-i18n="index.wishlist.email.label" for="wishlist-email">Email</label>
+<input class="w-full rounded-xl border-2 border-primary bg-surface-container-lowest focus:ring-primary focus:border-primary" data-i18n-placeholder="index.wishlist.email.placeholder" id="wishlist-email" name="email" placeholder="you@email.com" required type="email">
+</div>
+<div class="flex flex-col sm:flex-row gap-4 items-center justify-between pt-1">
+<p class="text-body-md text-on-surface-variant" data-i18n="index.wishlist.note">We only send the email and today's date.</p>
+<button class="kawaii-button bg-tertiary-fixed-dim text-primary font-label-bold text-label-bold px-7 py-3 rounded-full border-[4px] border-primary shadow-[6px_6px_0px_0px_rgba(66,54,43,1)] flex items-center gap-3 hover-squish active:scale-95" type="submit">
+<span class="material-symbols-outlined">mail</span>
+<span data-i18n="index.wishlist.submit">Send</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+</section>
 </main>
 <div aria-hidden="true" aria-modal="true" class="fixed inset-0 z-[100] hidden" id="image-modal" role="dialog">
 <div class="absolute inset-0 bg-black/60" data-image-modal-backdrop></div>
@@ -404,7 +432,17 @@
                     'index.game.feature2': 'Hundreds of levels with charming art',
                     'index.game.feature3': 'Lofi soundtrack to calm your mind',
                     'index.badge.googlePlay': 'Google Play',
-                    'index.badge.appStore': 'App Store'
+                    'index.badge.appStore': 'App Store',
+                    'index.wishlist.heading': 'Wishlist Updates',
+                    'index.wishlist.desc': "Leave your email and we'll notify you when Purring Blocks is available to wishlist.",
+                    'index.wishlist.email.label': 'Email',
+                    'index.wishlist.email.placeholder': 'you@email.com',
+                    'index.wishlist.note': "We only send the email and today's date.",
+                    'index.wishlist.submit': 'Send',
+                    'index.wishlist.subject': 'Wishlist request - Purring Blocks',
+                    'index.wishlist.status.sending': 'Sending...',
+                    'index.wishlist.status.sent': "Thanks! We'll let you know.",
+                    'index.wishlist.status.error': "Couldn't send. Please try again in a few minutes."
                 },
                 es: {
                     _lang: 'es',
@@ -435,7 +473,17 @@
                     'index.game.feature2': 'Cientos de niveles con arte encantador',
                     'index.game.feature3': 'Banda sonora lofi para calmar tu mente',
                     'index.badge.googlePlay': 'Google Play',
-                    'index.badge.appStore': 'App Store'
+                    'index.badge.appStore': 'App Store',
+                    'index.wishlist.heading': 'Wishlist',
+                    'index.wishlist.desc': 'Deja tu email y te avisaremos cuando Purring Blocks esté disponible para añadir a la wishlist.',
+                    'index.wishlist.email.label': 'Email',
+                    'index.wishlist.email.placeholder': 'tu@email.com',
+                    'index.wishlist.note': 'Solo enviamos el email y la fecha de hoy.',
+                    'index.wishlist.submit': 'Enviar',
+                    'index.wishlist.subject': 'Solicitud de wishlist - Purring Blocks',
+                    'index.wishlist.status.sending': 'Enviando...',
+                    'index.wishlist.status.sent': '¡Gracias! Te avisaremos.',
+                    'index.wishlist.status.error': 'No se pudo enviar. Inténtalo de nuevo en unos minutos.'
                 },
                 ca: {
                     _lang: 'ca',
@@ -466,7 +514,17 @@
                     'index.game.feature2': 'Centenars de nivells amb art encantador',
                     'index.game.feature3': 'Banda sonora lofi per calmar la ment',
                     'index.badge.googlePlay': 'Google Play',
-                    'index.badge.appStore': 'App Store'
+                    'index.badge.appStore': 'App Store',
+                    'index.wishlist.heading': 'Wishlist',
+                    'index.wishlist.desc': "Deixa el teu email i t'avisarem quan Purring Blocks estigui disponible per afegir a la wishlist.",
+                    'index.wishlist.email.label': 'Email',
+                    'index.wishlist.email.placeholder': 'tu@email.com',
+                    'index.wishlist.note': "Només enviem l'email i la data d'avui.",
+                    'index.wishlist.submit': 'Enviar',
+                    'index.wishlist.subject': 'Sol·licitud de wishlist - Purring Blocks',
+                    'index.wishlist.status.sending': 'Enviant...',
+                    'index.wishlist.status.sent': "Gràcies! T'avisarem.",
+                    'index.wishlist.status.error': "No s'ha pogut enviar. Torna-ho a provar d'aquí una estona."
                 }
             };
 
@@ -556,6 +614,9 @@
             const modalBackdrop = modal?.querySelector('[data-image-modal-backdrop]');
             const modalContent = modal?.querySelector('[data-image-modal-content]');
             const triggers = Array.from(document.querySelectorAll('[data-image-modal-trigger]'));
+            const wishlistForm = document.getElementById('wishlist-form');
+            const wishlistSuccess = document.getElementById('wishlist-success');
+            const wishlistDate = document.getElementById('wishlist-date');
 
             const closeModal = () => {
                 if (!modal) return;
@@ -595,6 +656,38 @@
             window.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) closeModal();
             });
+
+            const tKey = (key) => {
+                if (window.__i18n && typeof window.__i18n.t === 'function') return window.__i18n.t(key);
+                return key;
+            };
+
+            if (wishlistForm && wishlistSuccess) {
+                wishlistForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    if (wishlistDate) wishlistDate.value = new Date().toISOString().slice(0, 10);
+                    wishlistSuccess.classList.remove('hidden');
+                    wishlistSuccess.textContent = tKey('index.wishlist.status.sending');
+
+                    try {
+                        const formData = new FormData(wishlistForm);
+                        const response = await fetch('https://formsubmit.co/ajax/info@roldostudios.com', {
+                            method: 'POST',
+                            body: formData,
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        });
+
+                        if (!response.ok) throw new Error('submit_failed');
+
+                        wishlistSuccess.textContent = tKey('index.wishlist.status.sent');
+                        wishlistForm.reset();
+                    } catch (_) {
+                        wishlistSuccess.textContent = tKey('index.wishlist.status.error');
+                    }
+                });
+            }
 
             load(lang);
         })();
