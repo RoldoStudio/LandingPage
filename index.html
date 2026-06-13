@@ -280,6 +280,34 @@
 </div>
 </div>
 </section>
+<section class="w-full px-margin-mobile md:px-margin-desktop py-16 md:py-20 max-w-container-max mx-auto">
+<div class="bg-surface border-4 border-primary rounded-[2rem] p-8 md:p-10 shadow-[8px_8px_0px_0px_rgba(66,54,43,1)] relative overflow-hidden">
+<span class="material-symbols-outlined absolute -top-10 -right-10 text-[120px] text-primary-fixed opacity-40 transform rotate-[18deg] select-none">favorite</span>
+<div class="relative z-10 w-full">
+<h3 class="font-headline-lg text-primary mb-2" data-i18n="index.wishlist.heading">Wishlist Updates</h3>
+<p class="text-body-lg text-on-surface-variant mb-6" data-i18n="index.wishlist.desc">Leave your email and we'll notify you when Purring Blocks is available to wishlist.</p>
+<div class="hidden bg-secondary-container border-2 border-primary rounded-xl p-4 mb-5 text-on-secondary-container" id="wishlist-success" role="status"></div>
+<form action="https://formsubmit.co/info@roldostudios.com" class="space-y-4 w-full" id="wishlist-form" method="POST">
+<input data-i18n-value="index.wishlist.subject" name="_subject" type="hidden" value="Wishlist request - Purring Blocks - Showcase">
+<input name="_template" type="hidden" value="table">
+<input name="_honey" style="display:none" type="text">
+<input name="_captcha" type="hidden" value="false">
+<input id="wishlist-date" name="date" type="hidden" value="">
+<div class="space-y-2 w-full">
+<label class="font-label-bold text-label-bold text-primary" data-i18n="index.wishlist.email.label" for="wishlist-email">Email</label>
+<input class="w-full rounded-xl border-2 border-primary bg-surface-container-lowest focus:ring-primary focus:border-primary" data-i18n-placeholder="index.wishlist.email.placeholder" id="wishlist-email" name="email" placeholder="you@email.com" required type="email">
+</div>
+<div class="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center justify-between pt-1 w-full">
+<p class="text-body-md text-on-surface-variant sm:flex-1" data-i18n="index.wishlist.note">We only send the email and today's date.</p>
+<button class="kawaii-button bg-tertiary-fixed-dim text-primary font-label-bold text-label-bold px-7 py-3 rounded-full border-[4px] border-primary shadow-[6px_6px_0px_0px_rgba(66,54,43,1)] flex items-center justify-center gap-3 hover-squish active:scale-95 w-full sm:w-auto" type="submit">
+<span class="material-symbols-outlined">mail</span>
+<span data-i18n="index.wishlist.submit">Send</span>
+</button>
+</div>
+</form>
+</div>
+</div>
+</section>
 <!-- About Us Section -->
 <!-- Featured Game Section -->
 <section class="w-full px-margin-mobile md:px-margin-desktop py-20 max-w-container-max mx-auto">
@@ -336,34 +364,6 @@
 <span data-i18n="index.badge.appStore">App Store</span>
                         </button>
 </div>
-</div>
-</div>
-</section>
-<section class="w-full px-margin-mobile md:px-margin-desktop pb-20 max-w-container-max mx-auto">
-<div class="bg-surface border-4 border-primary rounded-[2rem] p-8 md:p-10 shadow-[8px_8px_0px_0px_rgba(66,54,43,1)] relative overflow-hidden">
-<span class="material-symbols-outlined absolute -top-10 -right-10 text-[120px] text-primary-fixed opacity-40 transform rotate-[18deg] select-none">favorite</span>
-<div class="relative z-10 max-w-2xl">
-<h3 class="font-headline-lg text-primary mb-2" data-i18n="index.wishlist.heading">Wishlist Updates</h3>
-<p class="text-body-lg text-on-surface-variant mb-6" data-i18n="index.wishlist.desc">Leave your email and we'll notify you when Purring Blocks is available to wishlist.</p>
-<div class="hidden bg-secondary-container border-2 border-primary rounded-xl p-4 mb-5 text-on-secondary-container" id="wishlist-success" role="status"></div>
-<form action="https://formsubmit.co/info@roldostudios.com" class="space-y-4" id="wishlist-form" method="POST">
-<input data-i18n-value="index.wishlist.subject" name="_subject" type="hidden" value="Wishlist request - Purring Blocks">
-<input name="_template" type="hidden" value="table">
-<input name="_honey" style="display:none" type="text">
-<input name="_captcha" type="hidden" value="false">
-<input id="wishlist-date" name="date" type="hidden" value="">
-<div class="space-y-2">
-<label class="font-label-bold text-label-bold text-primary" data-i18n="index.wishlist.email.label" for="wishlist-email">Email</label>
-<input class="w-full rounded-xl border-2 border-primary bg-surface-container-lowest focus:ring-primary focus:border-primary" data-i18n-placeholder="index.wishlist.email.placeholder" id="wishlist-email" name="email" placeholder="you@email.com" required type="email">
-</div>
-<div class="flex flex-col sm:flex-row gap-4 items-center justify-between pt-1">
-<p class="text-body-md text-on-surface-variant" data-i18n="index.wishlist.note">We only send the email and today's date.</p>
-<button class="kawaii-button bg-tertiary-fixed-dim text-primary font-label-bold text-label-bold px-7 py-3 rounded-full border-[4px] border-primary shadow-[6px_6px_0px_0px_rgba(66,54,43,1)] flex items-center gap-3 hover-squish active:scale-95" type="submit">
-<span class="material-symbols-outlined">mail</span>
-<span data-i18n="index.wishlist.submit">Send</span>
-</button>
-</div>
-</form>
 </div>
 </div>
 </section>
