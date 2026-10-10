@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.BlockMerge.BlockMerge",
+      "sha256_cert_fingerprints": [
+        "75:F7:5D:D8:32:28:E6:68:91:52:F6:A4:3D:72:35:53:37:50:59:93:08:5B:FF:1E:9F:0D:4C:37:5F:88:5B:21"
+      ]
+    }
+  }
+]
