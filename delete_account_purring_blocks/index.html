@@ -1,0 +1,479 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Delete your account - Purring Blocks</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="../images/REFERENCE.png" rel="icon" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;family=Quicksand:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-surface": "#2f312f",
+                        "surface-container-high": "#e9e8e5",
+                        "tertiary-fixed": "#ffdad9",
+                        "on-secondary-fixed": "#201b0c",
+                        "on-background": "#1a1c1a",
+                        "surface-container-highest": "#e3e2e0",
+                        "surface-tint": "#6a5c4f",
+                        "on-primary": "#ffffff",
+                        "on-primary-container": "#d0beaf",
+                        "on-primary-fixed-variant": "#514439",
+                        "secondary": "#645e4b",
+                        "on-secondary-fixed-variant": "#4c4634",
+                        "tertiary-fixed-dim": "#ffb3b3",
+                        "surface-container-lowest": "#ffffff",
+                        "surface": "#faf9f6",
+                        "on-surface": "#1a1c1a",
+                        "surface-container-low": "#f4f3f1",
+                        "on-tertiary-container": "#feacac",
+                        "surface-container": "#efeeeb",
+                        "secondary-fixed-dim": "#cfc6ae",
+                        "primary-fixed": "#f2dfcf",
+                        "on-secondary": "#ffffff",
+                        "background": "#faf9f6",
+                        "on-primary-fixed": "#231a10",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#6b6450",
+                        "outline-variant": "#d0c4bb",
+                        "on-tertiary-fixed": "#390b0e",
+                        "primary-fixed-dim": "#d6c3b4",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#7a3d3f",
+                        "secondary-container": "#ece2c9",
+                        "surface-dim": "#dbdad7",
+                        "surface-variant": "#e3e2e0",
+                        "on-surface-variant": "#4d453f",
+                        "inverse-on-surface": "#f2f1ee",
+                        "outline": "#7f756e",
+                        "tertiary": "#5e2729",
+                        "surface-bright": "#faf9f6",
+                        "primary-container": "#5a4d41",
+                        "inverse-primary": "#d6c3b4",
+                        "secondary-fixed": "#ece2c9",
+                        "on-tertiary-fixed-variant": "#703537",
+                        "primary": "#42362b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "container-max": "1200px",
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "margin-desktop": "80px"
+                    },
+                    "fontFamily": {
+                        "label-bold": ["Plus Jakarta Sans"],
+                        "body-md": ["Quicksand"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-lg": ["Quicksand"],
+                        "headline-xl": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-bold": ["14px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "500" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .kawaii-button {
+            transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+        }
+        .kawaii-button:active {
+            transform: translateY(4px);
+            box-shadow: 0px 0px 0px 0px #42362b;
+        }
+        .bg-paw-pattern {
+            background-image: radial-gradient(#d6c3b4 15%, transparent 16%), radial-gradient(#d6c3b4 15%, transparent 16%);
+            background-size: 60px 60px;
+            background-position: 0 0, 30px 30px;
+        }
+        .block-shadow {
+            box-shadow: 6px 6px 0px 0px rgba(66, 54, 43, 1);
+        }
+        .hover-squish:hover {
+            transform: scale(0.98);
+        }
+        .lang-select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background: transparent;
+            border: 0;
+            outline: none;
+            box-shadow: none;
+        }
+        .lang-select::-ms-expand { display: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden min-h-screen flex flex-col">
+<nav class="bg-surface dark:bg-inverse-surface w-full z-50 sticky top-0 border-b-4 border-primary dark:border-on-primary-fixed-variant shadow-[4px_4px_0px_0px_rgba(66,54,43,1)]">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<a class="text-headline-lg font-headline-lg font-black text-primary dark:text-primary-fixed-dim hover:scale-95 transition-transform" href="../">Roldo Studios</a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:bg-surface-container-high transition-transform hover:scale-95" data-i18n="nav.games" href="../">Home</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:bg-surface-container-high transition-transform hover:scale-95" data-i18n="nav.about" href="../about_us/">About</a>
+<a class="text-on-surface-variant dark:text-surface-variant font-medium hover:bg-surface-container-high transition-transform hover:scale-95" data-i18n="nav.contact" href="../contact/">Contact</a>
+</div>
+<div class="hidden md:flex items-center gap-3">
+<div class="relative flex items-center gap-1 bg-surface-container-lowest border-2 border-primary rounded-full px-2 py-1 shadow-[3px_3px_0px_0px_rgba(66,54,43,1)]">
+<span class="material-symbols-outlined text-primary text-[18px]">language</span>
+<select aria-label="Language" class="lang-select appearance-none bg-transparent border-0 text-primary font-label-bold text-[12px] leading-none tracking-widest pr-6 focus:outline-none focus:ring-0" data-lang-select>
+<option value="en">EN</option>
+<option value="es">ES</option>
+<option value="ca">CAT</option>
+</select>
+<span class="material-symbols-outlined text-primary text-[18px] absolute right-2 pointer-events-none">expand_more</span>
+</div>
+<button class="kawaii-button bg-tertiary-fixed text-primary font-label-bold text-label-bold px-6 py-2 rounded-full border-3 border-primary shadow-[4px_4px_0px_0px_rgba(66,54,43,1)] flex items-center gap-2">
+<span data-i18n="nav.playNow">Play Now</span>
+</button>
+</div>
+<button aria-controls="mobile-nav" aria-expanded="false" class="md:hidden w-11 h-11 rounded-full border-2 border-primary shadow-[3px_3px_0px_0px_rgba(66,54,43,1)] flex items-center justify-center bg-surface-container-lowest text-primary active:scale-95 transition-transform" id="nav-toggle" type="button">
+<span class="material-symbols-outlined text-[26px]" id="nav-toggle-icon">menu</span>
+</button>
+</div>
+<div class="md:hidden hidden w-full px-margin-mobile pb-4 max-w-container-max mx-auto" id="mobile-nav">
+<div class="bg-surface-container-lowest border-2 border-primary rounded-2xl shadow-[4px_4px_0px_0px_rgba(66,54,43,1)] p-4 flex flex-col gap-4">
+<a class="text-on-surface-variant font-medium w-fit" data-i18n="nav.games" href="../">Home</a>
+<a class="text-on-surface-variant font-medium w-fit" data-i18n="nav.about" href="../about_us/">About</a>
+<a class="text-on-surface-variant font-medium w-fit" data-i18n="nav.contact" href="../contact/">Contact</a>
+<div class="flex items-center gap-2 pt-1">
+<div class="relative flex items-center gap-1 bg-surface border-2 border-primary rounded-full px-2 py-1 shadow-[3px_3px_0px_0px_rgba(66,54,43,1)]">
+<span class="material-symbols-outlined text-primary text-[18px]">language</span>
+<select aria-label="Language" class="lang-select appearance-none bg-transparent border-0 text-primary font-label-bold text-[12px] leading-none tracking-widest pr-6 focus:outline-none focus:ring-0" data-lang-select>
+<option value="en">EN</option>
+<option value="es">ES</option>
+<option value="ca">CAT</option>
+</select>
+<span class="material-symbols-outlined text-primary text-[18px] absolute right-2 pointer-events-none">expand_more</span>
+</div>
+<button class="kawaii-button bg-tertiary-fixed text-primary font-label-bold text-label-bold px-5 py-2 rounded-full border-3 border-primary shadow-[4px_4px_0px_0px_rgba(66,54,43,1)] flex items-center gap-2">
+<span data-i18n="nav.playNow">Play Now</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<main class="flex-grow bg-paw-pattern">
+<div data-lang-block="en">
+<header class="py-16 md:py-24 text-center relative overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile">
+<div class="bg-surface-container-low border-4 border-primary rounded-[2rem] p-8 md:p-10 shadow-[8px_8px_0px_0px_rgba(66,54,43,1)] max-w-3xl mx-auto">
+<p class="font-label-bold text-label-bold uppercase tracking-widest text-on-surface-variant mb-3">Purring Blocks, by Roldo Studios</p>
+<h1 class="font-headline-xl text-headline-xl mb-4 text-primary">Delete your Purring Blocks account</h1>
+<p class="font-body-lg text-on-surface-variant">You can ask us to delete your account and your progress at any time.</p>
+</div>
+</div>
+</header>
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-16 md:pb-24">
+<div class="bg-surface border-4 border-primary rounded-[2rem] p-8 md:p-10 shadow-[8px_8px_0px_0px_rgba(66,54,43,1)] space-y-8">
+<!-- IN-GAME OPTION (EN): uncomment this section once the delete button is in the published game. Keep the email section below.
+<div class="space-y-3 scroll-mt-28" id="in-game">
+<h2 class="font-headline-lg text-[24px] md:text-[28px] leading-tight font-extrabold text-primary">From the game (fastest)</h2>
+<ol class="list-decimal pl-6 space-y-2 text-body-md text-on-surface-variant">
+<li>Open <span class="font-label-bold text-primary">Settings</span> (the gear).</li>
+<li>Tap the red <span class="font-label-bold text-primary">trash</span> button under the shield.</li>
+<li>Tap <span class="font-label-bold text-primary">Delete account</span> to confirm.</li>
+</ol>
+<p class="text-body-md text-on-surface-variant">Your account is deleted at once. Close the game and open it again to start as a new player.</p>
+</div>
+-->
+<div class="space-y-3 scroll-mt-28" id="email">
+<h2 class="font-headline-lg text-[24px] md:text-[28px] leading-tight font-extrabold text-primary">By email</h2>
+<p class="text-body-md text-on-surface-variant">Email <span class="font-label-bold text-primary">info@roldostudios.com</span> with the subject <span class="font-label-bold text-primary">"Delete my Purring Blocks account"</span> and tell us:</p>
+<ul class="list-disc pl-6 space-y-2 text-body-md text-on-surface-variant">
+<li><span class="font-label-bold text-primary">If you signed in with Google Play Games or Apple:</span> the email or player name of that account.</li>
+<li><span class="font-label-bold text-primary">If you played as a guest:</span> the approximate date you started, your device model and your level.</li>
+</ul>
+<p class="text-body-md text-on-surface-variant">We delete your account within <span class="font-label-bold text-primary">30 days</span> and confirm it by email.</p>
+</div>
+<div class="space-y-3 scroll-mt-28" id="delete">
+<h2 class="font-headline-lg text-[24px] md:text-[28px] leading-tight font-extrabold text-primary">What we delete</h2>
+<ul class="list-disc pl-6 space-y-2 text-body-md text-on-surface-variant">
+<li>Your account and user ID (guest, Google or Apple).</li>
+<li>Your progress: levels, stars, coins, diamonds, items, power-ups and your pet.</li>
+<li>Your name and score on the leaderboards.</li>
+</ul>
+</div>
+<div class="space-y-3 scroll-mt-28" id="keep">
+<h2 class="font-headline-lg text-[24px] md:text-[28px] leading-tight font-extrabold text-primary">What we keep</h2>
+<ul class="list-disc pl-6 space-y-2 text-body-md text-on-surface-variant">
+<li><span class="font-label-bold text-primary">Backups:</span> deleted data may remain in our encrypted backups for up to 30 more days.</li>
+<li><span class="font-label-bold text-primary">Purchases:</span> we don't keep records of real-money purchases on our servers. Your receipts are kept by Google Play or the App Store under their own policies. We never have your payment details.</li>
+<li><span class="font-label-bold text-primary">Measurement data:</span> if you answered "Yes" to the in-game privacy question, AppsFlyer, our measurement partner, may hold data linked to your device, not to your account. To stop it, change your answer in Settings (shield button) and reset your advertising ID in your device settings.</li>
+</ul>
+<p class="text-body-md text-on-surface-variant">More details: <a class="text-primary underline" href="../privacy_purring_blocks/">Privacy Policy</a>.</p>
+</div>
+</div>
+</section>
+</div>
+<div data-lang-block="es" hidden>
+<header class="py-16 md:py-24 text-center relative overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile">
+<div class="bg-surface-container-low border-4 border-primary rounded-[2rem] p-8 md:p-10 shadow-[8px_8px_0px_0px_rgba(66,54,43,1)] max-w-3xl mx-auto">
+<p class="font-label-bold text-label-bold uppercase tracking-widest text-on-surface-variant mb-3">Purring Blocks, de Roldo Studios</p>
+<h1 class="font-headline-xl text-headline-xl mb-4 text-primary">Borrar tu cuenta de Purring Blocks</h1>
+<p class="font-body-lg text-on-surface-variant">Puedes pedirnos que borremos tu cuenta y tu progreso en cualquier momento.</p>
+</div>
+</div>
+</header>
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-16 md:pb-24">
+<div class="bg-surface border-4 border-primary rounded-[2rem] p-8 md:p-10 shadow-[8px_8px_0px_0px_rgba(66,54,43,1)] space-y-8">
+<!-- OPCION EN EL JUEGO (ES): descomentar esta seccion cuando el boton de borrar este en la version publicada del juego. Mantener la seccion del correo.
+<div class="space-y-3 scroll-mt-28" id="es-in-game">
+<h2 class="font-headline-lg text-[24px] md:text-[28px] leading-tight font-extrabold text-primary">Desde el juego (lo más rápido)</h2>
+<ol class="list-decimal pl-6 space-y-2 text-body-md text-on-surface-variant">
+<li>Abre los <span class="font-label-bold text-primary">Ajustes</span> (el engranaje).</li>
+<li>Toca el botón rojo de la <span class="font-label-bold text-primary">papelera</span>, debajo del escudo.</li>
+<li>Toca <span class="font-label-bold text-primary">Borrar cuenta</span> para confirmarlo.</li>
+</ol>
+<p class="text-body-md text-on-surface-variant">Tu cuenta se borra al momento. Cierra el juego y vuelve a abrirlo para empezar como un jugador nuevo.</p>
+</div>
+-->
+<div class="space-y-3 scroll-mt-28" id="es-email">
+<h2 class="font-headline-lg text-[24px] md:text-[28px] leading-tight font-extrabold text-primary">Por correo electrónico</h2>
+<p class="text-body-md text-on-surface-variant">Escribe a <span class="font-label-bold text-primary">info@roldostudios.com</span> con el asunto <span class="font-label-bold text-primary">«Borrar mi cuenta de Purring Blocks»</span> e indícanos:</p>
+<ul class="list-disc pl-6 space-y-2 text-body-md text-on-surface-variant">
+<li><span class="font-label-bold text-primary">Si iniciaste sesión con Google Play Juegos o Apple:</span> el correo o el nombre de jugador de esa cuenta.</li>
+<li><span class="font-label-bold text-primary">Si jugaste como invitado:</span> la fecha aproximada en que empezaste, el modelo de tu dispositivo y tu nivel.</li>
+</ul>
+<p class="text-body-md text-on-surface-variant">Borramos tu cuenta en un plazo de <span class="font-label-bold text-primary">30 días</span> y te lo confirmamos por correo.</p>
+</div>
+<div class="space-y-3 scroll-mt-28" id="es-delete">
+<h2 class="font-headline-lg text-[24px] md:text-[28px] leading-tight font-extrabold text-primary">Qué borramos</h2>
+<ul class="list-disc pl-6 space-y-2 text-body-md text-on-surface-variant">
+<li>Tu cuenta y tu identificador de usuario (invitado, Google o Apple).</li>
+<li>Tu progreso: niveles, estrellas, monedas, diamantes, objetos, potenciadores y tu mascota.</li>
+<li>Tu nombre y tu puntuación en las clasificaciones.</li>
+</ul>
+</div>
+<div class="space-y-3 scroll-mt-28" id="es-keep">
+<h2 class="font-headline-lg text-[24px] md:text-[28px] leading-tight font-extrabold text-primary">Qué conservamos</h2>
+<ul class="list-disc pl-6 space-y-2 text-body-md text-on-surface-variant">
+<li><span class="font-label-bold text-primary">Copias de seguridad:</span> los datos borrados pueden permanecer en nuestras copias de seguridad cifradas hasta 30 días más.</li>
+<li><span class="font-label-bold text-primary">Compras:</span> no guardamos registros de las compras con dinero real en nuestros servidores. Tus recibos los conservan Google Play o App Store según sus propias políticas. Nunca tenemos tus datos de pago.</li>
+<li><span class="font-label-bold text-primary">Datos de medición:</span> si respondiste «Sí» a la pregunta de privacidad del juego, AppsFlyer, nuestro socio de medición, puede tener datos vinculados a tu dispositivo, no a tu cuenta. Para evitarlo, cambia tu respuesta en los Ajustes (botón del escudo) y restablece tu identificador de publicidad en los ajustes del dispositivo.</li>
+</ul>
+<p class="text-body-md text-on-surface-variant">Más información: <a class="text-primary underline" href="../privacy_purring_blocks/">Política de privacidad</a>.</p>
+</div>
+</div>
+</section>
+</div>
+<div data-lang-block="ca" hidden>
+<header class="py-16 md:py-24 text-center relative overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile">
+<div class="bg-surface-container-low border-4 border-primary rounded-[2rem] p-8 md:p-10 shadow-[8px_8px_0px_0px_rgba(66,54,43,1)] max-w-3xl mx-auto">
+<p class="font-label-bold text-label-bold uppercase tracking-widest text-on-surface-variant mb-3">Purring Blocks, de Roldo Studios</p>
+<h1 class="font-headline-xl text-headline-xl mb-4 text-primary">Esborrar el teu compte de Purring Blocks</h1>
+<p class="font-body-lg text-on-surface-variant">Ens pots demanar que esborrem el teu compte i el teu progrés en qualsevol moment.</p>
+</div>
+</div>
+</header>
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pb-16 md:pb-24">
+<div class="bg-surface border-4 border-primary rounded-[2rem] p-8 md:p-10 shadow-[8px_8px_0px_0px_rgba(66,54,43,1)] space-y-8">
+<!-- OPCIO AL JOC (CA): descomentar aquesta seccio quan el boto d'esborrar sigui a la versio publicada del joc. Mantenir la seccio del correu.
+<div class="space-y-3 scroll-mt-28" id="ca-in-game">
+<h2 class="font-headline-lg text-[24px] md:text-[28px] leading-tight font-extrabold text-primary">Des del joc (el més ràpid)</h2>
+<ol class="list-decimal pl-6 space-y-2 text-body-md text-on-surface-variant">
+<li>Obre els <span class="font-label-bold text-primary">Ajustos</span> (l'engranatge).</li>
+<li>Toca el botó vermell de la <span class="font-label-bold text-primary">paperera</span>, sota l'escut.</li>
+<li>Toca <span class="font-label-bold text-primary">Esborrar el compte</span> per confirmar-ho.</li>
+</ol>
+<p class="text-body-md text-on-surface-variant">El teu compte s'esborra a l'instant. Tanca el joc i torna'l a obrir per començar com a jugador nou.</p>
+</div>
+-->
+<div class="space-y-3 scroll-mt-28" id="ca-email">
+<h2 class="font-headline-lg text-[24px] md:text-[28px] leading-tight font-extrabold text-primary">Per correu electrònic</h2>
+<p class="text-body-md text-on-surface-variant">Escriu a <span class="font-label-bold text-primary">info@roldostudios.com</span> amb l'assumpte <span class="font-label-bold text-primary">«Esborrar el meu compte de Purring Blocks»</span> i indica'ns:</p>
+<ul class="list-disc pl-6 space-y-2 text-body-md text-on-surface-variant">
+<li><span class="font-label-bold text-primary">Si vas iniciar la sessió amb Google Play Jocs o Apple:</span> el correu o el nom de jugador d'aquest compte.</li>
+<li><span class="font-label-bold text-primary">Si vas jugar com a convidat:</span> la data aproximada en què vas començar, el model del teu dispositiu i el teu nivell.</li>
+</ul>
+<p class="text-body-md text-on-surface-variant">Esborrem el teu compte en un termini de <span class="font-label-bold text-primary">30 dies</span> i t'ho confirmem per correu.</p>
+</div>
+<div class="space-y-3 scroll-mt-28" id="ca-delete">
+<h2 class="font-headline-lg text-[24px] md:text-[28px] leading-tight font-extrabold text-primary">Què esborrem</h2>
+<ul class="list-disc pl-6 space-y-2 text-body-md text-on-surface-variant">
+<li>El teu compte i el teu identificador d'usuari (convidat, Google o Apple).</li>
+<li>El teu progrés: nivells, estrelles, monedes, diamants, objectes, potenciadors i la teva mascota.</li>
+<li>El teu nom i la teva puntuació a les classificacions.</li>
+</ul>
+</div>
+<div class="space-y-3 scroll-mt-28" id="ca-keep">
+<h2 class="font-headline-lg text-[24px] md:text-[28px] leading-tight font-extrabold text-primary">Què conservem</h2>
+<ul class="list-disc pl-6 space-y-2 text-body-md text-on-surface-variant">
+<li><span class="font-label-bold text-primary">Còpies de seguretat:</span> les dades esborrades poden romandre a les nostres còpies de seguretat xifrades fins a 30 dies més.</li>
+<li><span class="font-label-bold text-primary">Compres:</span> no desem registres de les compres amb diners reals als nostres servidors. Els teus rebuts els conserven Google Play o l'App Store segons les seves pròpies polítiques. Mai no tenim les teves dades de pagament.</li>
+<li><span class="font-label-bold text-primary">Dades de mesura:</span> si vas respondre «Sí» a la pregunta de privacitat del joc, AppsFlyer, el nostre soci de mesura, pot tenir dades vinculades al teu dispositiu, no al teu compte. Per evitar-ho, canvia la resposta als Ajustos (botó de l'escut) i restableix el teu identificador de publicitat a la configuració del dispositiu.</li>
+</ul>
+<p class="text-body-md text-on-surface-variant">Més informació: <a class="text-primary underline" href="../privacy_purring_blocks/">Política de privacitat</a>.</p>
+</div>
+</div>
+</section>
+</div>
+</main>
+<footer class="bg-secondary-container dark:bg-inverse-surface w-full px-margin-mobile md:px-margin-desktop py-12 flex flex-col items-center gap-6 rounded-t-xl border-t-4 border-primary z-10 relative">
+<div class="font-headline-lg text-headline-lg text-primary flex items-center gap-2"><span class="material-symbols-outlined text-[32px]">pets</span> Roldo Studios</div>
+<div class="flex flex-wrap justify-center gap-x-6 gap-y-2">
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" data-i18n="footer.privacy" href="../privacy_purring_blocks/">Privacy Policy</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" data-i18n="footer.terms" href="../terms_purring_blocks/">Terms of Service</a>
+<a class="font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors" data-i18n="footer.support" href="../support_purring_blocks/">Support</a>
+<a class="font-label-bold text-label-bold text-primary hover:text-primary transition-colors" data-i18n="footer.deleteAccount" href="./">Delete account</a>
+</div>
+<p class="font-body-md text-body-md text-on-secondary-container dark:text-on-primary-fixed text-center max-w-md" data-i18n="footer.copyright">© 2026 Roldo Studios. All rights reserved. Purr-fectly crafted for cozy gamers.</p>
+</footer>
+<script>
+        (() => {
+            const supported = ['en', 'es', 'ca'];
+            const storageKey = 'lang';
+            const selects = Array.from(document.querySelectorAll('[data-lang-select]'));
+            const titles = {"en": "Delete your account - Purring Blocks", "es": "Borrar tu cuenta - Purring Blocks", "ca": "Esborrar el teu compte - Purring Blocks"};
+            const fallback = {
+                "en": {
+                    "_lang": "en",
+                    "nav.games": "Home",
+                    "nav.about": "About",
+                    "nav.contact": "Contact",
+                    "nav.playNow": "Play Now",
+                    "footer.copyright": "© 2026 Roldo Studios. All rights reserved. Purr-fectly crafted for cozy gamers.",
+                    "footer.privacy": "Privacy Policy",
+                    "footer.terms": "Terms of Service",
+                    "footer.support": "Support",
+                    "footer.deleteAccount": "Delete account"
+                },
+                "es": {
+                    "_lang": "es",
+                    "nav.games": "Inicio",
+                    "nav.about": "Sobre nosotros",
+                    "nav.contact": "Contacto",
+                    "nav.playNow": "Jugar ahora",
+                    "footer.copyright": "© 2026 Roldo Studios. Todos los derechos reservados. Hecho con cariño para gamers cozy.",
+                    "footer.privacy": "Política de privacidad",
+                    "footer.terms": "Términos del servicio",
+                    "footer.support": "Soporte",
+                    "footer.deleteAccount": "Borrar la cuenta"
+                },
+                "ca": {
+                    "_lang": "ca",
+                    "nav.games": "Inici",
+                    "nav.about": "Sobre nosaltres",
+                    "nav.contact": "Contacte",
+                    "nav.playNow": "Juga ara",
+                    "footer.copyright": "© 2026 Roldo Studios. Tots els drets reservats. Fet amb estima per a gamers cozy.",
+                    "footer.privacy": "Política de privacitat",
+                    "footer.terms": "Termes del servei",
+                    "footer.support": "Suport",
+                    "footer.deleteAccount": "Esborrar el compte"
+                }
+            };
+
+            // ?lang=es|ca|en opens the page in that language (handy for links from the game).
+            const getLang = () => {
+                const q = new URLSearchParams(location.search).get('lang');
+                if (supported.includes(q)) return q;
+                const v = localStorage.getItem(storageKey);
+                return supported.includes(v) ? v : 'en';
+            };
+
+            // Each language has its own block of content; only the selected one is shown.
+            const showLang = (lang) => {
+                document.querySelectorAll('[data-lang-block]').forEach((el) => {
+                    el.hidden = el.getAttribute('data-lang-block') !== lang;
+                });
+                document.documentElement.lang = lang;
+                if (titles[lang]) document.title = titles[lang];
+            };
+
+            const apply = (dict, lang) => {
+                const t = (key) => (key in dict ? dict[key] : '');
+                document.querySelectorAll('[data-i18n]').forEach((el) => {
+                    const key = el.getAttribute('data-i18n');
+                    const val = t(key) || (fallback[lang] && fallback[lang][key]) || '';
+                    if (val) el.textContent = val;
+                });
+                window.__i18n = {
+                    lang,
+                    dict,
+                    t: (key) => (key in dict ? dict[key] : key),
+                };
+            };
+
+            const load = async (lang) => {
+                try {
+                    const res = await fetch(`../i18n/${lang}.json`, { cache: 'no-store' });
+                    if (!res.ok) throw new Error('fetch_failed');
+                    const dict = await res.json();
+                    apply(dict, lang);
+                } catch (_) {
+                    if (fallback[lang]) apply(fallback[lang], lang);
+                }
+            };
+
+            const toggleBtn = document.getElementById('nav-toggle');
+            const toggleIcon = document.getElementById('nav-toggle-icon');
+            const mobileNav = document.getElementById('mobile-nav');
+            const setMobileOpen = (open) => {
+                if (!mobileNav || !toggleBtn || !toggleIcon) return;
+                mobileNav.classList.toggle('hidden', !open);
+                toggleBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+                toggleIcon.textContent = open ? 'close' : 'menu';
+            };
+
+            if (toggleBtn && mobileNav) {
+                toggleBtn.addEventListener('click', () => setMobileOpen(mobileNav.classList.contains('hidden')));
+                mobileNav.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMobileOpen(false)));
+            }
+
+            const setAllSelects = (lang) => {
+                selects.forEach((s) => {
+                    if (s.value !== lang) s.value = lang;
+                });
+            };
+
+            const lang = getLang();
+            setAllSelects(lang);
+            showLang(lang);
+            // Spanish and Catalan sections use prefixed ids (es-rights): keep #rights links working.
+            // Scroll after load, once Tailwind has styled the page, so the position is final.
+            if (location.hash && lang !== 'en') {
+                const target = document.getElementById(`${lang}-${location.hash.slice(1)}`);
+                if (target) window.addEventListener('load', () => requestAnimationFrame(() => target.scrollIntoView()));
+            }
+            selects.forEach((s) => {
+                s.addEventListener('change', () => {
+                    const next = s.value;
+                    localStorage.setItem(storageKey, next);
+                    setAllSelects(next);
+                    showLang(next);
+                    load(next);
+                });
+            });
+
+            load(lang);
+        })();
+    </script>
+</body></html>
